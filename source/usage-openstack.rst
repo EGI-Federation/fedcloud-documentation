@@ -48,6 +48,7 @@ Check-in credentials to obtain:
 All of them can be used to obtain the needed access token, here using curl:
 
 .. code-block:: console
+
    $ curl -X POST -u '<client id>':'<client secret>'  \
    l      -d 'client_id=<client id>&<client secret>&grant_type=refresh_token&refresh_token=<refresh token>&scope=openid%20email%20profile' \
           'https://aai.egi.eu/oidc/token' | python -m json.tool;
@@ -70,12 +71,14 @@ Adding IGTF CA to python's CA store.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
+
    cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
 
 Installing requirements
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
+
    pip install requests
    pip install openstackclient
 
@@ -97,6 +100,7 @@ The script expects your credentials to be available in the environment:
 * OS_AUTH_URL: Keystone URL (depends on the provider, you can get it in https://goc.egi.eu)
 
 .. code-block:: console
+
    # Export OIDC env
    export CHECKIN_CLIENT_ID=<CLIENT_ID>
    export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -112,6 +116,7 @@ Using an access token to interact with OpenStack Native APIs
 Putting everything together it's possible to interact with OpenStack using the OIDC token.
 
 .. code-block:: console
+
    # Export OIDC env
    export CHECKIN_CLIENT_ID=<CLIENT_ID>
    export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -139,6 +144,7 @@ With the OpenStack client you can use the following command to set the OS_TOKEN
 variable with the needed token:
 
 .. code-block:: console
+
    $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
                --os-protocol oidc --os-identity-provider egi.eu \
                --os-auth-url <keystone  url> \
@@ -159,6 +165,7 @@ Optionally set the CHECKIN_URL to the Check-in endpoint (https://aai-dev.eu.eu/
 if testing on the devel environment).
 
 .. code-block:: console
+
    # Export OIDC env
    export CHECKIN_CLIENT_ID=<CLIENT_ID>
    export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -181,12 +188,14 @@ When selected using `--key-name` while creating a server, it will be
 automatically added the ssh configuration.
 
 .. code-block:: console
+
    openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
 
 Creating a VM using OpenStack native API
 ----------------------------------------
 
-.. code-block:: console
+.. coode-block:: console
+
    openstack flavor list
    FLAVOR=<FLAVOR_NAME>
    openstack image list
@@ -218,6 +227,7 @@ Using cloud-init with OpenStack
 -------------------------------
 
 .. code-block:: console
+
    openstack server create --flavor m3.medium \
      --image d0a89aa8-9644-408d-a023-4dcc1148ca01 \
      --user-data userdata.txt --key-name My_Key server01.example.com
@@ -229,6 +239,7 @@ Shell script data as user data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell
+
    #!/bin/sh
    adduser --disabled-password --gecos "" clouduser
 
@@ -236,6 +247,7 @@ cloud-config data as user data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml
+
    #cloud-config
    hostname: mynode
    fqdn: mynode.example.com
