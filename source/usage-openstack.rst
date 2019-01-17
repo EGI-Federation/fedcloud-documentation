@@ -85,7 +85,7 @@ Discovering projects
 --------------------
 
 You may not know which projects are available to your user at a given provider,
-but you can easily discover them using the Keystone API. The :doc:`../get-projects.py`
+but you can easily discover them using the Keystone API. The :download:`../get-projects.py`
 script will just do that for you (requires requests library). It expects these
 variables to be defined in the environment:
 
@@ -146,7 +146,7 @@ variable with the needed token:
                --os-project-id <your project id> token issue -c id -f value)
 
 You can refresh the access token and obtain an OpenStack token in a single
-:doc:`../get-token.py` script expecting your credentials to be available in
+:download:`../get-token.py` script expecting your credentials to be available in
 the environment:
 
 * CHECKIN_CLIENT_ID: Your Check-in client id (get it from https://aai.egi.eu/fedcloud)
