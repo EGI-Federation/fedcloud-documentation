@@ -12,4 +12,4 @@ script:
   # https://github.com/markdownlint/markdownlint
   - mdl -s relaxed README.md
   # https://github.com/myint/rstcheck
-  - rstcheck --report warning -r .
+  - rstcheck --report warning source/*.rst
