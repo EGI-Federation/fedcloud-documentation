@@ -9,5 +9,7 @@ install:
   - pip install sphinx
 script:
   # Linting
+  # https://github.com/markdownlint/markdownlint
   - mdl -s relaxed README.md
-  - rstcheck -r .
+  # https://github.com/myint/rstcheck
+  - rstcheck --report warning -r .
