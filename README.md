@@ -2,7 +2,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/egi-federated-cloud/badge/?version=latest)](http://egi-federated-cloud.readthedocs.io/en/latest/?badge=latest)
 
-Documentation for users willing to use EGI Federated Cloud (FedCloud).
+EGI Federated Cloud (FedCloud) user documentation.
 
 Documentation for site providers willing to integrate with EGI FedCloud is also available on [readthedocs](https://egi-federated-cloud-integration.readthedocs.io/en/latest/).
 
