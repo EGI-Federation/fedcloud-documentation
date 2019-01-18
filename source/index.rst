@@ -11,4 +11,5 @@ EGI Federated Cloud
    :caption: Contents:
 
    introduction
+   check-in
    usage-openstack
