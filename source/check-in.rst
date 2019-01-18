@@ -1,6 +1,6 @@
 .. toctree::
 
-.. _oidc-auth-using-check-in
+.. _oidc-auth-using-check-in:
 
 OIDC authentication using Check-in
 ==================================
