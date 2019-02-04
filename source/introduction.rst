@@ -11,6 +11,8 @@ servers.
 Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:
 
+.. TODO: do we have nice link for resource discovery?
+
 * Single Sign-On via `EGI Check-in <https://www.egi.eu/services/check-in/>`_,
   users can login into every provider with their institutional credentials and
   using modern industry standards like `OpenID Connect <https://openid.net/connect/>`_.
@@ -22,11 +24,11 @@ offer:
 * Resource discovery features to easily understand which providers are support
   your community and what are their capabilities.
 
-* Global accounting that aggregates and allows visualisation of usage
-  information across the whole federation.
+* `Global accounting <https://accounting.egi.eu/cloud/>`_ that aggregates and
+  allows visualisation of usage information across the whole federation.
 
-* Monitoring of Availability and Reliability of the providers to ensure SLAs
-  are fulfilled.
+* `Monitoring of Availability and Reliability of the providers <http://argo.egi.eu/status-fedcloud>`_
+  to ensure SLAs are met.
 
 
 The flexibility of the Infrastructure as a Service can benefit various use
@@ -69,8 +71,8 @@ Getting access
 --------------
 
 
-Cloud Compute service is accessed through Virtual Organisations (VOs). A VO is
-a grouping of IaaS cloud providers from the federation, who allocate capacity
+Cloud Compute service is accessed through **Virtual Organisations (VOs)**. A VO
+is a grouping of IaaS cloud providers from the federation, who allocate capacity
 for a specific user group. Users with similar interest/requirements can join or
 form a VO to gather resources from EGI cloud providers - typically for a given
 project, experiment or use case. There are generic VOs too, for example the
