@@ -5,8 +5,8 @@ Authentication
 
 .. _oidc-auth-using-check-in:
 
-OpenID Connect
---------------
+OpenID Connect using Check-in
+-----------------------------
 
 `OpenID Connect <http://openid.net/connect/>`_ is an authentication protocol
 based on OAuth 2.0 and replacing the current VOMS-based authentication on the
