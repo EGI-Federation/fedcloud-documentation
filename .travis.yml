@@ -2,12 +2,14 @@
 language: python
 python:
   - "2.7"
-  - "3.4"
+  - "3.6"
 install:
   - gem install mdl
   - pip install rstcheck
   - pip install sphinx
 script:
   # Linting
+  # https://github.com/markdownlint/markdownlint
   - mdl -s relaxed README.md
-  - rstcheck -r .
+  # https://github.com/myint/rstcheck
+  - rstcheck --report warning source/*.rst

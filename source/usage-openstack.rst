@@ -139,7 +139,7 @@ automatically added the ssh configuration.
 Creating a VM using OpenStack native API
 ----------------------------------------
 
-.. coode-block:: console
+.. code-block:: console
 
    openstack flavor list
    FLAVOR=<FLAVOR_NAME>
