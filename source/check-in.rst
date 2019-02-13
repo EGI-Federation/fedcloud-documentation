@@ -12,7 +12,7 @@ OpenID Connect using Check-in
 based on OAuth 2.0 and replacing the current VOMS-based authentication on the
 EGI Cloud.
 
-Those providers natively integrated with EGI Check-in are able to authenticate
+The providers natively integrated with EGI Check-in are able to authenticate
 users with OAuth 2.0 tokens without using any certificates in the process by
 relying on the OpenStack Keystone `OS-FEDERATION API <https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api>`_.
 
