@@ -184,7 +184,6 @@ Every VO needs two different pieces of information:
   (e.g. for fedcloud.egi.eu VO, you would have ``fedcloud.egi.eu.voms1.grid.cesnet.cz``
   and ``fedcloud.egi.eu.voms2.grid.cesnet.cz``.
 
-
 * the ``.lsc`` files that describe the trust chain of the VOMS server. These are
   stored at ``/etc/grid-security/vomsdir/<vo name>`` and there should be one
   file for each of the VOMS server of the VO.
