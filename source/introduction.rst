@@ -119,7 +119,7 @@ Other VOs
 ^^^^^^^^^
 
 Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
-your VO manager.  If none of the existing VOs matches your use case, then a
+your VO manager. If none of the existing VOs matches your use case, then a
 new VO can be created. Place an order in `EGI Marketplace <https://marketplace.egi.eu/31-cloud-compute>`_
 and we will invite providers from the infrastructure to support your needs.
 
