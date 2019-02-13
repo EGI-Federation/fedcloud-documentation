@@ -30,7 +30,6 @@ offer:
 * `Monitoring of Availability and Reliability of the providers <http://argo.egi.eu/status-fedcloud>`_
   to ensure SLAs are met.
 
-
 The flexibility of the Infrastructure as a Service can benefit various use
 cases and usage models. Besides serving compute/data intensive analysis
 workflows, Web services and interactive applications can be also integrated
