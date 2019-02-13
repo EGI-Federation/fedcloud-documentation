@@ -58,7 +58,7 @@ emerged:
     `The Chipster Platform <https://www.egi.eu/use-cases/research-stories/new-viruses-implicated-in-fatal-snake-disease/>`_.
 
 * **Datasets repository**: the EGI Cloud can be used to store and manage large
-  datasets exploiting the big amount of disk storage available in the Federation.
+  datasets exploiting the large amount of disk storage available in the Federation.
 
 * **Disposable and testing environments**: environments for training or testing
   new developments.
