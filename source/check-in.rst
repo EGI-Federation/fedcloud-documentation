@@ -158,7 +158,6 @@ commands for performing actual operations in the provider:
    For 3rd party tools that can use token based authentication in OpenStack,
    use the following command (after setting the environment as shown above):
 
-
    .. code-block:: console
 
      export OS_ACCESS_TOKEN=$(curl -s -X POST -u "$CHECKIN_CLIENT_ID":"$CHECKIN_CLIENT_SECRET"  \
