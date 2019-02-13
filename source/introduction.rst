@@ -114,7 +114,6 @@ new user.
   * The resources are not guaranteed and may be removed without notice by
     providers. **Back-up frequently to avoid loosing your work!**
 
-
 Other VOs
 ^^^^^^^^^
 
