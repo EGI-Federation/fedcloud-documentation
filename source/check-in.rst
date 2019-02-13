@@ -21,7 +21,7 @@ relying on the OpenStack Keystone `OS-FEDERATION API <https://developer.openstac
 The process for authentication is as follows:
 
 #. Obtain a valid access token from Check-in. Access tokens are short-lived
-   credentials that can be obtanied by recognised Check-in clients once a user
+   credentials that can be obtained by recognised Check-in clients once a user
    has authenticated.
 
 #. Interchange the Check-in access token for a valid unscoped Keystone token.
