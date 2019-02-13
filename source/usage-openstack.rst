@@ -18,7 +18,7 @@ includes details on every OpenStack project, most providers offer access to:
 
 * cinder, for block storage
 
-* neutron, for network management, and
+* neutron, for network management
 
 * horizon, as a web dashboard
 
