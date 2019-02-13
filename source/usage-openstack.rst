@@ -1,5 +1,7 @@
 .. toctree::
 
+.. _`FedCloud Check-in client`: https://aai.egi.eu/fedcloud
+
 Using OpenStack providers
 =========================
 
@@ -81,14 +83,19 @@ You can refresh the access token and obtain an OpenStack token in a single
 :download:`../get-token.py` script expecting your credentials to be available in
 the environment:
 
-* ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from https://aai.egi.eu/fedcloud)
-* ``CHECKIN_CLIENT_SECRET``: Your Check-in client secret (get it from https://aai.egi.eu/fedcloud)
-* ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from https://aai.egi.eu/fedcloud)
-* ``OS_AUTH_URL``: Keystone URL (depends on the provider, you can get it in https://goc.egi.eu)
-* ``OS_PROJECT_ID``: OpenStack project to use (See script above for obtaining it)
+* ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from
+  `FedCloud Check-in client`_)
+* ``CHECKIN_CLIENT_SECRET``: Your Check-in client secret (get it from
+  `FedCloud Check-in client`_)
+* ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from
+  `FedCloud Check-in client`_)
+* ``OS_AUTH_URL``: Keystone URL (depends on the provider, you can get it in
+  `GOCDB <https://goc.egi.eu>`_)
+* ``OS_PROJECT_ID``: OpenStack project to use (See script above for
+  obtaining it)
 
-Optionally set the ``CHECKIN_URL`` to the Check-in endpoint (https://aai-dev.eu.eu/
-if testing on the devel environment).
+Optionally set the ``CHECKIN_URL`` to the Check-in endpoint
+(https://aai-dev.eu.eu/ if testing on the devel environment).
 
 .. code-block:: console
 
@@ -151,9 +158,8 @@ Creating a VM
    # Deleting floating IP
    openstack floating ip delete <IP>
 
-* `OpenStack: launch an instance on the provicer network <https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html>`_
+* `OpenStack: launch an instance on the provider network <https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html>`_
 * `OpenStack: Manging IP addresses <https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html>`_
-
 
 Using cloud-init
 ^^^^^^^^^^^^^^^^

@@ -93,7 +93,7 @@ and follow the link to the respective CA page at the `TCS participants <https://
 list (See FAQs for details.)
 
 If eScience Personal certificate is not available in your country, then obtain
-a certificate from a regular `https://www.eugridpma.org/members/worldmap/ <IGTF CA>`_
+a certificate from a regular `IGTF CA <https://www.eugridpma.org/members/worldmap/>`_
 (this may require a personal visit at the CA).
 
 Join pilot VO

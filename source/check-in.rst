@@ -1,5 +1,7 @@
 .. toctree::
 
+.. _`FedCloud Check-in client`: https://aai.egi.eu/fedcloud
+
 Authentication
 ==============
 
@@ -47,8 +49,8 @@ authentication flow.
 
 In the case of EGI Check-in, we have created a special client meant to obtain
 your personal refresh token and client credentials that will allow the
-obtention of access tokens as needed. You can access the client at
-https://aai.egi.eu/fedcloud/ and click on 'Authorise' to log in with your
+obtention of access tokens as needed. You can access the
+`FedCloud Check-in client`_ and click on 'Authorise' to log in with your
 Check-in credentials to obtain:
 
 * a client id
@@ -69,10 +71,14 @@ The :download:`../get-projects.py` script will just do that for you (requires
 ``requests`` library). It expects these variables to be defined in the
 environment:
 
-* ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from https://aai.egi.eu/fedcloud)
-* ``CHECKIN_CLIENT_SECRET``: Your Check-in client secret (get it from https://aai.egi.eu/fedcloud)
-* ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from https://aai.egi.eu/fedcloud)
-* ``OS_AUTH_URL``: Keystone URL (depends on the provider, you can get it in https://goc.egi.eu)
+* ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from
+  `FedCloud Check-in client`_)
+* ``CHECKIN_CLIENT_SECRET``: Your Check-in client secret (get it from
+  `FedCloud Check-in client`_)
+* ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from
+  `FedCloud Check-in client`_)
+* ``OS_AUTH_URL``: Keystone URL (depends on the provider, you can get it in
+  `GOCDB <https://goc.egi.eu>`_)
 
 .. TODO(enolfc): discovery of Keystone URL?
 
@@ -126,7 +132,6 @@ environment:
    .. code-block:: console
 
      cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
-
 
 Access the provider
 ^^^^^^^^^^^^^^^^^^^
