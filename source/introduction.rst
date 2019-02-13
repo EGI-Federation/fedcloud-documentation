@@ -65,7 +65,6 @@ emerged:
 
   * Example: `Training infrastructure <https://wiki.egi.eu/wiki/Training_infrastructure>`_.
 
-
 Getting access
 --------------
 
