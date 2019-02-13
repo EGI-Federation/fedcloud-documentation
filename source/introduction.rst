@@ -96,7 +96,7 @@ list (See FAQs for details.)
 
 If eScience Personal certificate is not available in your country, then obtain
 a certificate from a regular `https://www.eugridpma.org/members/worldmap/ <IGTF CA>`_
-(this requires personal visit at the CA).
+(this may require a personal visit at the CA).
 
 Join pilot VO
 ^^^^^^^^^^^^^
