@@ -191,7 +191,7 @@ cloud-config data as user data
 Terraform
 ---------
 
-`Terraform <https://terraform.io>`_  supports EGI Cloud OpenStack providers by
+`Terraform <https://terraform.io>`_ supports EGI Cloud OpenStack providers by
 using valid access tokens for Keystone. For using this, just configure your
 provider as usual in Terraform, but do not include user/password informaton:
 
