@@ -131,7 +131,7 @@ environment:
 Access the provider
 ^^^^^^^^^^^^^^^^^^^
 
-Once you know which project to use, you can get use your regular openstack cli
+Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
 
 .. code-block:: console
