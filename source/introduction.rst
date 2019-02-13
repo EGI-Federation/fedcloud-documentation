@@ -69,7 +69,6 @@ emerged:
 Getting access
 --------------
 
-
 Cloud Compute service is accessed through **Virtual Organisations (VOs)**. A VO
 is a grouping of IaaS cloud providers from the federation, who allocate capacity
 for a specific user group. Users with similar interest/requirements can join or
