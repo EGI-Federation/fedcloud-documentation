@@ -7,7 +7,7 @@ EGI Federated Cloud
 
 The EGI Cloud service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute
-driven applications and services in research and science.
+driven applications and services for research and science.
 
 This documentation focuses on using the service. Those resource providers
 willing to integrate into the service, plase check `EGI Federated Cloud Integration documentation <https://egi-federated-cloud-integration.readthedocs.io>`_.
