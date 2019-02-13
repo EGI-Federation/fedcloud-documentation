@@ -12,7 +12,6 @@ driven applications and services for research and science.
 This documentation focuses on using the service. Those resource providers
 willing to integrate into the service, plase check `EGI Federated Cloud Integration documentation <https://egi-federated-cloud-integration.readthedocs.io>`_.
 
-
 .. toctree::
    :numbered:
    :maxdepth: 2
