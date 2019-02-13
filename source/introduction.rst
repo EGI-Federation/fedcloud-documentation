@@ -90,7 +90,7 @@ Obtaining a certificate
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The easiest option is to get an 'eScience Personal' certificate online from the
-Terena Certificate Service CA. Check here the countries where this is available,
+Terena Certificate Service CA. Check the countries where this is available,
 and follow the link to the respective CA page at the `TCS participants <https://www.terena.org/activities/tcs/participants.html>`_
 list (See FAQs for details.)
 
