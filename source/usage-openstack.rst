@@ -295,7 +295,6 @@ environment variables:
 Note that as in the example above you can get images using information from
 AppDB if needed.
 
-
 libcloud
 --------
 
