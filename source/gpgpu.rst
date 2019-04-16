@@ -20,11 +20,11 @@ The table below summarises the available options:
 |                   |                                 | conditions to be negotiated for long-term  |
 |                   |                                 | usage                                      |
 +-------------------+---------------------------------+--------------------------------------------+
-| **IFCA-LCG2**     | up to 4 Nvidia GT200GL          | Pay-per-use                                |
+| **IFCA-LCG2**     | up to 4 NVIDIA GT200GL          | Pay-per-use                                |
 |                   +---------------------------------+                                            |
-|                   | up to 1 Nvidia Titan X          |                                            |
+|                   | up to 1 NVIDIA TITAN X          |                                            |
 |                   +---------------------------------+                                            |
-|                   | up to 10 Nvidia Titan 1080ti    |                                            |
+|                   | up to 10 GeForce GTX 1080 Ti    |                                            |
 +-------------------+---------------------------------+--------------------------------------------+
 | **NCG-INGRID-PT** | up to xXX                       | Pay-per-use                                |
 +-------------------+---------------------------------+--------------------------------------------+
