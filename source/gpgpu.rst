@@ -5,7 +5,7 @@ GPGPUs on EGI Cloud
 
 GPGPUs resources are available on selected providers of the EGI Cloud. These 
 are available as specific **flavors** that when used to instantiate a Virtual
-Machine will make the hardware available for the user.
+Machine will make the hardware available to the user.
 
 The table below summarises the available options:
 
