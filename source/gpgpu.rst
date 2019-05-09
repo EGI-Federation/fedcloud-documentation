@@ -24,5 +24,6 @@ The table below summarises the available options:
 |                    +---------------------------------+                                            |
 |                    | up to 1 NVIDIA TITAN X          |                                            |
 |                    +---------------------------------+                                            |
-|                    | up to 10 GeForce GTX 1080 Ti    |                                            |
+|                    | up to 10 NVIDIA GeForce GTX     |                                            |
+|                    | 1080 Ti                         |                                            |
 +--------------------+---------------------------------+--------------------------------------------+
