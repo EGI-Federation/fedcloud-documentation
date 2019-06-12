@@ -21,6 +21,7 @@ The Chipster testbed configured at `CESGA <https://www.cesga.es/>`_ offers:
 * 1TB of block storage in /data,
 * Software and tools (v3.12.3) are in available under the /cvmfs/chipster.egi.eu/
   partition.
+* Chipster (v3.12.3)
 
 For accessing this testbed you need to be a member of the `Applications on Demand <https://www.egi.eu/services/applications-on-demand/>`_
 
@@ -44,7 +45,7 @@ and:
   * You can monitor the account creation by clicking in the *"Show"* button.
 
 * Once your account is available, the web interface will show a link to access the 
-  `Chipster server <http://193.144.35.160:8081/chipster.jnlp>`_ with the new credentials.  
+  `Chipster server <http://chipster.aod.fedcloud.eu:8081/chipster.jnlp>`_ with the new credentials.  
 
 .. image:: img/chipster.png
    :width: 900px
