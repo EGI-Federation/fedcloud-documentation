@@ -12,8 +12,8 @@ Service Description
 -------------------
 
 The service allows user-friendly access to a portfolio of applications and
-application hosting frameworks (Science Gateways, VREs) that are configured to
-use the dedicated pool of cloud computing clusters from our providers. The 
+application hosting frameworks (e.g.: Science Gateways, VREs) that are configured 
+to use the dedicated pool of cloud computing clusters from our providers. The 
 service also allows users to run their own simulation/analysis models with
 custom input data. 
 
@@ -31,9 +31,9 @@ support (at) egi.eu
 Intended user groups
 ::::::::::::::::::::
 
-* Researchers and scientist.
+* Researchers and scientists.
 
-* Application developers who want to share their app available to the community
+* Application developers who want to share their applications available to the community
   through AoD.
 
 * National e-Infrastructures who want to offer the EGI applications library to
@@ -54,7 +54,7 @@ Through this service:
 
 * **Providers** of compute and storage services can share their clusters and
   clouds to serve 'the long tail of science'. For more information see
-  `AOd for information providers <https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_providers>`_.
+  `AoD for information providers <https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_providers>`_.
 
 Service components
 ::::::::::::::::::
@@ -70,7 +70,7 @@ Service components
   applications and for the hosting of scientific services.
 
 * A network of **Consultants** and supporters who can provide guidance on the
-  use of the service
+  use of the service.
 
 
 Requirements and user registration
@@ -360,6 +360,10 @@ Presentations about the service:
   
 * `Slideset about the concept of the EGI long-tail of science platform <https://documents.egi.eu/document/2358>`_
   (from Nov. 2014).
+
+* `IWSG2017 Proceeding <http://ceur-ws.org/Vol-2363/paper9.pdf>`_
+  (from June 2017).
+
 
 .. _EC3 Portal: https://servproject.i3m.upv.es/ec3-ltos/index.php
 
