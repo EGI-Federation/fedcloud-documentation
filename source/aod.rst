@@ -361,10 +361,6 @@ Presentations about the service:
 * `Slideset about the concept of the EGI long-tail of science platform <https://documents.egi.eu/document/2358>`_
   (from Nov. 2014).
 
-* `IWSG2017 Proceeding <http://ceur-ws.org/Vol-2363/paper9.pdf>`_
-  (from June 2017).
-
-
 .. _EC3 Portal: https://servproject.i3m.upv.es/ec3-ltos/index.php
 
 .. _EGI Marketplace: https://marketplace.egi.eu
