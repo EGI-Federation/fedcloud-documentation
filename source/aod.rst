@@ -192,7 +192,7 @@ Life Sciences
 
 * AutoDock Vina is an open-source software for doing molecular docking.
   
-  Access via `WS-PGRADE/gUSE portal <https://ltos-gateway.lpds.sztaki.hu/web/wizard/help>`_ 
+  Access via `WS-PGRADE/gUSE portal <https://ltos-gateway.lpds.sztaki.hu/web/wizard/help>`_ .
  
 * `NAMD <http://www.ks.uiuc.edu/Research/namd/>`_ is a parallel molecular dynamics
   code designed for high-performance simulation of large bio-molecular systems.
