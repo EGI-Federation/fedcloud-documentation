@@ -218,7 +218,7 @@ Tools
 
   Access via the EC3 portal `EC3 portal`_. 
 
-* `OSCAR <https://o-scar.readthedocs.io/>`_ is a framework for to efficiently
+* `OSCAR <https://o-scar.readthedocs.io/>`_ is a framework designed to efficiently
   support on-premises FaaS (Functions as a Service) for general-purpose
   fileprocessing computing applications.
 
