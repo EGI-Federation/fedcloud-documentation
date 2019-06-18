@@ -111,7 +111,7 @@ resources, which can be used to run the application of choice. This grant
 includes:
 
 * up to 4 CPU cores,
-* 8 GB of RAM, and
+* 8 GB of RAM,
 * 100GB of block storage
 
 The grant to run applications is initially valid for 6 months and can be 
