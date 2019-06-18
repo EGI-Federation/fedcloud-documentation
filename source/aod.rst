@@ -79,7 +79,7 @@ Requirements and user registration
 The service is open for any researchers, scientists and engineers who need a
 simple and user-friendly access to compute, storage and applications services
 in order to carry out data/compute intensive science and innovation. The user
-needs to be affiliated with, or at least have a partner (for example a referee),
+needs to be affiliated with, or at least have a partnership (for example a referee) with,
 a research institution in Europe to qualify for access. 
 	 
 Access **requires** acceptance of `Acceptable Use Policy (AUP) and Conditions of
