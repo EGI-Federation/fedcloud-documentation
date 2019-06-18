@@ -160,7 +160,7 @@ Computer Science & Mathematics
   integrated development environment (IDE) for R, a programming language for
   statistical computing and graphics.
 
-  Access via the `FutureGateway Science Gateway <https://fgsg.ct.infn.it/egissod/web/ssod/r-studio1>`_
+  Access via the `FutureGateway Science Gateway <https://fgsg.ct.infn.it/egissod/web/ssod/r-studio1>`_.
 
 * `Octave <https://www.gnu.org/software/octave/>`_ is a high-level interpreted
   language, primarily intended for numerical computations. It provides
