@@ -167,7 +167,7 @@ Computer Science & Mathematics
   capabilities for the numerical solution of linear and nonlinear problems,
   and for performing other numerical experiments. 
 
-  Access via the EC3 portal `EC3 portal`_
+  Access via the EC3 portal `EC3 portal`_.
    
 Life Sciences
 :::::::::::::
