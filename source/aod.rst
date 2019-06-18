@@ -101,7 +101,7 @@ the 'EGI Applications on Demand Service' <https://documents.egi.eu/public/ShowDo
 
 When requesting access to AoD users are guided through a lightweight registration
 process. Members of the EGI support team will perform a lightweight vetting process
-to validate the users' requests before granting the access to the computing resources.
+to validate the users' requests before granting the access to the resources.
 
 Service grant
 :::::::::::::
