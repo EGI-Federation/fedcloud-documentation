@@ -232,7 +232,7 @@ Tools
   Access via the EC3 portal `EC3 portal`_. 
 
 * The `AppDB VMOps dashboard <https://dashboard.appdb.egi.eu/>`_, a framework for
-  perform Virtual Machine (VM) management operations on the EGI Federated Cloud.
+  performing Virtual Machine (VM) management operations on the EGI Federated Cloud.
   The graphical interfaces of the dashboard allows the user to choose VMs from
   the AppDB Catalogue, to define an execution topology for them, and then to
   instantiate them on infrastructure as a service clouds. 
