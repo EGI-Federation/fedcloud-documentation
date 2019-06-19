@@ -12,10 +12,10 @@ Service Description
 -------------------
 
 The service allows user-friendly access to a portfolio of applications and
-application hosting frameworks (e.g.: Science Gateways, VREs) that are configured 
-to use the dedicated pool of cloud computing clusters from our providers. The 
+application hosting frameworks (e.g.: Science Gateways, VREs) that are configured
+to use the dedicated pool of cloud computing clusters from our providers. The
 service also allows users to run their own simulation/analysis models with
-custom input data. 
+custom input data.
 
 The service operates as an open and extensible ‘hub’ for providers and
 e-infrastructure user support teams who wish to federated and share
@@ -47,7 +47,7 @@ Through this service:
 * **Researchers** can access applications underpinned by high-capacity compute
   and storage servers, to carry out compute and data-intensive simulations.
   Use of the service does not require advanced experience with distributed
-  and/or cloud computing. 
+  and/or cloud computing.
 
 * **Developers** can integrate custom applications into the service and offer
   them as 'scalable, online services' for researchers and scientists worldwide.
@@ -58,7 +58,7 @@ Through this service:
 
 Service components
 ::::::::::::::::::
-	 
+
 * **Scientific applications** that are offered ‘as services’ through graphical
   environments.
 
@@ -80,8 +80,8 @@ The service is open for any researchers, scientists and engineers who need a
 simple and user-friendly access to compute, storage and applications services
 in order to carry out data/compute intensive science and innovation. The user
 needs to be affiliated with, or at least have a partnership (for example a referee) with,
-a research institution in Europe to qualify for access. 
-	 
+a research institution in Europe to qualify for access.
+
 Access **requires** acceptance of `Acceptable Use Policy (AUP) and Conditions of
 the 'EGI Applications on Demand Service' <https://documents.egi.eu/public/ShowDocument?docid=2635>`_.
 
@@ -91,7 +91,7 @@ the 'EGI Applications on Demand Service' <https://documents.egi.eu/public/ShowDo
 
    Users of the service are asked to provide appropriate acknowledgement of the
    use in scientific publications. The following acknowledgement text can be
-   used for this purpose: 
+   used for this purpose:
 
    **This work used the EGI Applications on Demand service, which is co-funded
    by the EOSC-hub project (grant number 777536). The HNSciCloud project (grant
@@ -107,17 +107,17 @@ Service grant
 :::::::::::::
 
 Once granted access, each user will have a grant with a pre-defined quota of
-resources, which can be used to run the application of choice. This grant 
+resources, which can be used to run the application of choice. This grant
 includes:
 
 * up to 4 CPU cores,
 * 8 GB of RAM,
 * 100GB of block storage.
 
-The grant to run applications is initially valid for 6 months and can be 
+The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request.
 
-How can you access the service? 
+How can you access the service?
 :::::::::::::::::::::::::::::::
 
 #. Login to the `EGI Marketplace`_ with the EGI AAI Check-In service.
@@ -137,9 +137,9 @@ Please check the `EGI Marketplace guide <https://wiki.egi.eu/wiki/HowToAccessThe
 for further details.
 
 .. FIXME: don't we have GGUS SU for AoD?
-   For generic questions or inquiries, please contact the EGI Support team at: 
+   For generic questions or inquiries, please contact the EGI Support team at:
    applications-platform-support@mailman.egi.eu.
-   For gateway-specific support please contact: 
+   For gateway-specific support please contact:
    * FutureGateway Science Gateway (FGSG): fgsg@ct.infn.it
    * WS-PGRAGE/gUSE portal: portalwide@lpds.sztaki.hu
    * EC3 portal: micafer1@upv.es
@@ -165,10 +165,10 @@ Computer Science & Mathematics
 * `Octave <https://www.gnu.org/software/octave/>`_ is a high-level interpreted
   language, primarily intended for numerical computations. It provides
   capabilities for the numerical solution of linear and nonlinear problems,
-  and for performing other numerical experiments. 
+  and for performing other numerical experiments.
 
   Access via the EC3 portal `EC3 portal`_.
-   
+
 Life Sciences
 :::::::::::::
 
@@ -177,27 +177,28 @@ Life Sciences
   generation sequencing (NGS), microarray, proteomics and sequence data. Users
   can save and share automatic analysis workflows, and visualize data
   interactively using a built-in genome browser and many other
-  visualizations. 
+  visualizations.
 
   Access via the `FutureCatania Science Gateway <https://fgsg.ct.infn.it/egissod/web/ssod/chipster-user-account-instructions>`.
 
 * `Galaxy <https://galaxyproject.org/>`_ is an open, web-based platform for
-  data intensive biomedical research. 
+  data intensive biomedical research.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 .. TODO: add the EC3 + Galaxy documentation
    Instructions on how to use Galaxy workflows with EC3 are available
    [https://wiki.egi.eu/wiki/Galaxy_workflows_with_EC3 here].
 
-* AutoDock Vina is an open-source software for doing molecular docking.
-  
-  Access via `WS-PGRADE/gUSE portal <https://ltos-gateway.lpds.sztaki.hu/web/wizard/help>`_ .
- 
+.. This is commented out for the time being until we properly clarify what's
+   going on with WS-PGRADE
+   * AutoDock Vina is an open-source software for doing molecular docking.
+   Access via `WS-PGRADE/gUSE portal <https://ltos-gateway.lpds.sztaki.hu/web/wizard/help>`_ .
+
 * `NAMD <http://www.ks.uiuc.edu/Research/namd/>`_ is a parallel molecular dynamics
   code designed for high-performance simulation of large bio-molecular systems.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 Tools
 :::::
@@ -205,44 +206,44 @@ Tools
 * `Docker <https://www.docker.com/>`_  is an open-source project that automates
   the deployment of Linux applications inside software containers.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 * `Hadoop <http://hadoop.apache.org/>`_  is a framework that allows for the
   distributed processing of large data sets across clusters of computers using
-  simple programming models. 
+  simple programming models.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 * `Marathon <https://mesosphere.github.io/marathon>`_/`Chronos <https://github.com/mesos/chronos Chronos>`_
   orchestration and fault-tolerant scheduler that runs on top of Apache Mesos.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 * `OSCAR <https://o-scar.readthedocs.io/>`_ is a framework designed to efficiently
   support on-premises FaaS (Functions as a Service) for general-purpose
   fileprocessing computing applications.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 * `Kubernetes <https://kubernetes.io/>`_ is an open-source container-orchestration
   system for automating application deployment, scaling, and management.
   Through this framework users can create a containerized version of workflows
-  and services that can be deployed in the EGI Infrastructure.  
+  and services that can be deployed in the EGI Infrastructure.
 
-  Access via the EC3 portal `EC3 portal`_. 
+  Access via the EC3 portal `EC3 portal`_.
 
 * The `AppDB VMOps dashboard <https://dashboard.appdb.egi.eu/>`_, a framework for
   performing Virtual Machine (VM) management operations on the EGI Federated Cloud.
   The graphical interfaces of the dashboard allows the user to choose VMs from
   the AppDB Catalogue, to define an execution topology for them, and then to
-  instantiate them on infrastructure as service clouds. 
+  instantiate them on infrastructure as service clouds.
 
-  The EGI VMOps dashboard is available [https://dashboard.appdb.egi.eu/ here]
+  Access the `EGI VMOps dashboard <https://dashboard.appdb.egi.eu/vmops/>`_.
 
 AoD portals/gateways
 --------------------
 
-Applications of the service are accessed via three different portals/gateways:
+Applications of the service are accessed via the following portals/gateways:
 
 FutureGateway Science Gateway
 :::::::::::::::::::::::::::::
@@ -250,73 +251,70 @@ FutureGateway Science Gateway
 The `FutureGateway Science Gateway (FGSG) <http://www.catania-science-gateways.it/>`_
 is a programmable interface of a RESTful API Server, compliant with CSGF APIs
 specifications, able to provide an easy acces to the PaaS layer by leveraging
-on recent Web technologies. 
+on recent Web technologies.
 
 * The FGSG incorporates several applications and offers these "as services"
-  for the user. 
+  for the user.
 * The FGSG provides users with an intuitive web interface to execute dockerized
-  applications on the cloud resources of the platform. 
+  applications on the cloud resources of the platform.
 
   * The FGSG take cares of starting the job in one of the available resources
     of the platform, of transferring the needed files (e.g. executable, input
     files, etc.) and downloading the output(s) in behalf of the users
-    
+
 * FGSG is open source and released under the Apache 2.0 license.
 
 Access `the FGSG integrated in the AoD <https://fgsg.ct.infn.it/egissod/web/ssod>`_.
 
-WS-PGRADE
-:::::::::
-
-The `WS-PGRADE <http://guse.hu/about/architecture/ws-pgrade>`_ (Web Services
-Parallel Grid Runtime and Developer Environment Portal) is the Liferay-based
-web portal (WS-PGRADE web application) of gUSE, wich also includes a graphical
-portal service. 
-
-* WS-PGRADE is a Web portal hosted in a standard portal framework, using the
-  client APIs of gUSE services to turn user requests into sequences of gUSE
-  specific Web service calls. 
-* WS-PGRADE is integrated with the cloud resources of the platform, and
-  provides a 'job wizard' interface for the user. 
-* Through the wizard one can define with a few clicks a computational job that
-  WS-PGRADE will execute on the cloud resources. 
-
-  * The environment takes care of instantiation of Virtual Machine image for
-    the job, for sending input data for the job, and for the retrieval of job
-    outputs.
-
-Access `the WS-PGRADE/gUSE integrated in the AoD <https://guse.egi.eu/c/portal/login?openIdLogin=true>`_.
+.. TODO: Find out whether WS-PGRADE can be really used or not
+   WS-PGRADE
+   :::::::::
+   The `WS-PGRADE <http://guse.hu/about/architecture/ws-pgrade>`_ (Web Services
+   Parallel Grid Runtime and Developer Environment Portal) is the Liferay-based
+   web portal (WS-PGRADE web application) of gUSE, wich also includes a graphical
+   portal service.
+   * WS-PGRADE is a Web portal hosted in a standard portal framework, using the
+     client APIs of gUSE services to turn user requests into sequences of gUSE
+     specific Web service calls.
+   * WS-PGRADE is integrated with the cloud resources of the platform, and
+     provides a 'job wizard' interface for the user.
+   * Through the wizard one can define with a few clicks a computational job that
+     WS-PGRADE will execute on the cloud resources.
+     * The environment takes care of instantiation of Virtual Machine image for
+       the job, for sending input data for the job, and for the retrieval of job
+       outputs.
+   Access `the WS-PGRADE/gUSE integrated in the AoD <https://guse.egi.eu/c/portal/login?openIdLogin=true>`_.
 
 EC3
 :::
 
 `EC3 <https://servproject.i3m.upv.es/ec3/>`_ (Elastic Cloud Computing Cluster)
 is a platform which allows to create elastic virtual clusters on top of
-Infrastructure as a Service (IaaS) providers. 
+Infrastructure as a Service (IaaS) providers.
 
 * The cluster, which is defined with a 'job wizard' interface for the user,
   is composed by a front node, where a batch job scheduler is running, and a
-  number of compute nodes. 
+  number of compute nodes.
 
   * These compute nodes will be dynamically deployed and provisioned to fit
-    increasing load, and undeployed when they are in idle status. 
+    increasing load, and undeployed when they are in idle status.
 
 * The list of application libraries/tools installed in the front-node can be
   exported via NFS in all the compute nodes.
-  
+
 * The installation and configuration of the cluster is performed by means of
   the execution of Ansible receipts.
 * An Enterprise Linux OS is used for both the front-node and the compute nodes
   of the cluster.
 * The cluster provided with AoD is personal - users have root-access to the
   environment, and can setup and configure the system to their needs. It is
-  meant to be shut down when no longer needed. 
+  meant to be shut down when no longer needed.
 
 .. FIXME: Why?
    The EC3 platform requires that ports <u>8800</u> and <u>8989</u>
    have to be accessible from outside.
 
-Access the `EC3 portal`_. 
+Access the `EC3 portal`_.
 
 Detailed documentation
 ----------------------
@@ -357,7 +355,7 @@ Presentations about the service:
 
 * `Slideset about the authentication and authorization model adopted <https://documents.egi.eu/document/2363>`_
   (from Nov. 2015).
-  
+
 * `Slideset about the concept of the EGI long-tail of science platform <https://documents.egi.eu/document/2358>`_
   (from Nov. 2014).
 
