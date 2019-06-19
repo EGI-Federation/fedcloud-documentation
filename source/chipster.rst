@@ -34,7 +34,7 @@ account is valid for **one month**.
 Go to `Chipster entry in Science Software on Demand Portal <https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts>`_
 and:
 
-* Click on the *"Show form"*
+* Click on the *"Show form"*.
 
 * If the account has expired, the Science Gateway will automatically generate a
   new password for you.
