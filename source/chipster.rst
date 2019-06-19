@@ -29,7 +29,7 @@ Create/Review a temporary account
 ---------------------------------
 
 You need to create a temporary account to access the Chipster server, by default this
-account is valid for **one month**
+account is valid for **one month**.
 
 Go to `Chipster entry in Science Software on Demand Portal <https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts>`_
 and:
