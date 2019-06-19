@@ -290,7 +290,7 @@ Access `the WS-PGRADE/gUSE integrated in the AoD <https://guse.egi.eu/c/portal/l
 EC3
 :::
 
-`EC3 <http://servproject.i3m.upv.es/ec3/>`_ (Elastic Cloud Computing Cluster)
+`EC3 <https://servproject.i3m.upv.es/ec3/>`_ (Elastic Cloud Computing Cluster)
 is a platform which allows to create elastic virtual clusters on top of
 Infrastructure as a Service (IaaS) providers. 
 
