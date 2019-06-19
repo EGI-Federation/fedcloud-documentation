@@ -345,7 +345,7 @@ Presentations about the service:
   service to NGIs/USTs representatives, RI architects, resource providers and
   researchers (June 2017).
 
-* `Slideset about the staus report of the platform at the EGI Conference 2016 <https://indico.egi.eu/indico/event/2875/session/35/contribution/89>`_.
+* `Slideset about the status report of the platform at the EGI Conference 2016 <https://indico.egi.eu/indico/event/2875/session/35/contribution/89>`_.
 
 * `Slideset about the staus report of the EGI platform at the DI4R Conference 2016 <http://digitalinfrastructures.eu/content/serving-long-tail>`_.
 
