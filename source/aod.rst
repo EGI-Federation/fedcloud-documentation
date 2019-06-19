@@ -347,7 +347,7 @@ Presentations about the service:
 
 * `Slideset about the status report of the platform at the EGI Conference 2016 <https://indico.egi.eu/indico/event/2875/session/35/contribution/89>`_.
 
-* `Slideset about the staus report of the EGI platform at the DI4R Conference 2016 <http://digitalinfrastructures.eu/content/serving-long-tail>`_.
+* `Slideset about the status report of the EGI platform at the DI4R Conference 2016 <http://digitalinfrastructures.eu/content/serving-long-tail>`_.
 
 * `Overview of the EGI Infrastructure for serving the long tail <https://indico.egi.eu/indico/contributionDisplay.py?contribId=83&confId=2544>`_
   (EGI Community Forum, November 2015).
