@@ -306,7 +306,7 @@ Infrastructure as a Service (IaaS) providers.
   
 * The installation and configuration of the cluster is performed by means of
   the execution of Ansible receipts.
-* An Enterprise Linux OS is used for both he front-node and the compute nodes
+* An Enterprise Linux OS is used for both the front-node and the compute nodes
   of the cluster.
 * The cluster provided with AoD is personal - users have root-access to the
   environment, and can setup and configure the system to their needs. It is
