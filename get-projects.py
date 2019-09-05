@@ -5,6 +5,7 @@ from __future__ import print_function
 
 import os
 import requests
+import sys
 
 # URL Parse
 try:
@@ -25,6 +26,7 @@ def get_access_token(client_id, client_secret, refresh_token):
     }
     r = requests.post("https://aai.egi.eu/oidc/token",
                       auth=(client_id, client_secret), data=refresh_data)
+    r.raise_for_status()
     return r.json()['access_token']
 
 
@@ -45,7 +47,12 @@ def get_unscoped_token(os_auth_url, access_token, method='oidc'):
     r = requests.post(url,
                       headers={'Authorization': 'Bearer %s' % access_token})
     if r.status_code != 201:
-        return get_unscoped_token(os_auth_url, access_token, 'openid')
+        if method != 'openid':
+            return get_unscoped_token(os_auth_url, access_token, 'openid')
+        else:
+            print(r.status_code)
+            print(r.text)
+            sys.exit('Unable to get an unscoped token')
     else:
         return r.headers['X-Subject-Token']
 
@@ -53,6 +60,7 @@ def get_unscoped_token(os_auth_url, access_token, method='oidc'):
 def get_projects(os_auth_url, unscoped_token):
     url = get_keystone_url(os_auth_url, "/v3/auth/projects")
     r = requests.get(url, headers={'X-Auth-Token': unscoped_token})
+    r.raise_for_status()
     return r.json()['projects']
 
 
