@@ -37,13 +37,17 @@ def get_keystone_url(os_auth_url, path):
     return urlunparse((url[0], url[1], path, url[3], url[4], url[5]))
 
 
-def get_unscoped_token(os_auth_url, access_token):
+def get_unscoped_token(os_auth_url, access_token, method='oidc'):
     url = get_keystone_url(
         os_auth_url,
-        "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/oidc/auth")
+        "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/%s/auth" %
+        method)
     r = requests.post(url,
                       headers={'Authorization': 'Bearer %s' % access_token})
-    return r.headers['X-Subject-Token']
+    if r.status_code != 201:
+        return get_unscoped_token(os_auth_url, access_token, 'openid')
+    else:
+        return r.headers['X-Subject-Token']
 
 
 def get_projects(os_auth_url, unscoped_token):
@@ -61,8 +65,8 @@ def main():
     os_auth_url = os.environ.get('OS_AUTH_URL', '')
 
     access_token = get_access_token(client_id, client_secret, refresh_token)
-    projects = get_projects(os_auth_url,
-                            get_unscoped_token(os_auth_url, access_token))
+    unscoped_token = get_unscoped_token(os_auth_url, access_token)
+    projects = get_projects(os_auth_url, unscoped_token)
     for p in projects:
         print('ID: %(id)s - Name: %(name)s - Enabled: %(enabled)s' % p)
 
