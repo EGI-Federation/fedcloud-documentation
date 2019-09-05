@@ -46,7 +46,7 @@ def get_unscoped_token(os_auth_url, access_token, method='oidc'):
         method)
     r = requests.post(url,
                       headers={'Authorization': 'Bearer %s' % access_token})
-    if r.status_code != 201:
+    if r.status_code != requests.codes.created:
         if method != 'openid':
             return get_unscoped_token(os_auth_url, access_token, 'openid')
         else:
