@@ -5,7 +5,6 @@ from __future__ import print_function
 
 import os
 import requests
-import sys
 
 # URL Parse
 try:
@@ -39,7 +38,19 @@ def get_keystone_url(os_auth_url, path):
     return urlunparse((url[0], url[1], path, url[3], url[4], url[5]))
 
 
-def get_unscoped_token(os_auth_url, access_token, method='oidc'):
+def get_unscoped_token(os_auth_url, access_token):
+    """Get an unscopped token, trying various protocol names if needed"""
+    try:
+        unscoped_token = retrieve_unscoped_token(os_auth_url, access_token)
+    except RuntimeError:
+        unscoped_token = retrieve_unscoped_token(os_auth_url, access_token,
+                                                 'openid')
+
+    return unscoped_token
+
+
+def retrieve_unscoped_token(os_auth_url, access_token, method='oidc'):
+    """Request an unscopped token"""
     url = get_keystone_url(
         os_auth_url,
         "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/%s/auth" %
@@ -47,12 +58,7 @@ def get_unscoped_token(os_auth_url, access_token, method='oidc'):
     r = requests.post(url,
                       headers={'Authorization': 'Bearer %s' % access_token})
     if r.status_code != requests.codes.created:
-        if method != 'openid':
-            return get_unscoped_token(os_auth_url, access_token, 'openid')
-        else:
-            print(r.status_code)
-            print(r.text)
-            sys.exit('Unable to get an unscoped token')
+        raise RuntimeError('Unable to get an unscoped token')
     else:
         return r.headers['X-Subject-Token']
 
