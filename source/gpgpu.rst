@@ -27,3 +27,5 @@ The table below summarises the available options:
 |                    | up to 10 NVIDIA GeForce GTX     |                                            |
 |                    | 1080 Ti                         |                                            |
 +--------------------+---------------------------------+--------------------------------------------+
+| **CESNET-MCC**     | up to 2 NVIDIA T4               | Sponsored, conditions to be negotiated     |
++--------------------+---------------------------------+--------------------------------------------+
