@@ -9,7 +9,7 @@ application.
 
 If you are in need of more storage than the one provided within image disk of
 your VMs, or need to persist data independently from the VMs storage, you will
-need to use one of the solutions available on the EGI service catalogue.
+need to use one of the solutions available on the `EGI service catalogue <https://www.egi.eu/services/>`_.
 
 There are two kind of storage services, Block and Object. Both of them have
 their own set of advantages and disadvantages
