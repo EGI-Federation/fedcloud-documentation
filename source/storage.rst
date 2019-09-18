@@ -125,7 +125,7 @@ Once you have a filesystem you can mount it at the desired path:
 
    # mount /dev/<volume device> /<path>
 
-With that you can access `/<path>` where all your data will be available.
+With that you can access ``/<path>`` where all your data will be available.
 Applications will not see any difference between a block storage device and a
 regular hardware disk, thus no major changes should be required in the application logic.
 
