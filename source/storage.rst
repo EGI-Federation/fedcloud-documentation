@@ -96,7 +96,6 @@ listed below:
 | `server remove volume <server> <volume>` | Dettach a volume from a server       |
 +------------------------------------------+--------------------------------------+
 
-
 For using the legacy OCCI interface refer to `OCCI Howto <https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client>`_.
 
 Using block storage from your VMs
