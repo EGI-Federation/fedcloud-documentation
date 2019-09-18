@@ -116,7 +116,7 @@ command (run this at your VM!).
 
    # mkfs.ext4 /dev/<volume device>
 
-The `<volume device>` (e.g `vdb`) can be obtained with the `openstack volume show`
+The ``<volume device>`` (e.g ``vdb``) can be obtained with the ``openstack volume show``
 command
 
 Once you have a filesystem you can mount it at the desired path:
