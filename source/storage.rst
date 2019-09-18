@@ -141,7 +141,6 @@ Object Storage
    We are currently re-evaluating the object storage capabilities of EGI
    Cloud and will update this documentation as soon as possible.
 
-
 OpenStack SWIFT offers a RESTful API to manage your storage. As with block
 storage you can manage it via the OpenStack CLI or web dashboard.
 
