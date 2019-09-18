@@ -205,7 +205,7 @@ you to easily recover a previous version of your VM.
 
    openstack server image create <your VM> --name <name of the snapshot>
 
-Once the snapshot is ready (`openstack image show <name of the snapshot>` will
+Once the snapshot is ready (``openstack image show <name of the snapshot>`` will
 give your the details you can use it as any other image at the provider:
 
 .. code-block:: console
