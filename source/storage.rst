@@ -15,7 +15,7 @@ There are two kind of storage services, Block and Object. Both of them have
 their own set of advantages and disadvantages
 
 **Block storage** provides additional storage blocks which can be attached to a
-virtual machine. A storage block is a virtual disk of a given size, which can 
+virtual machine. A storage block is a virtual disk of a given size, which can
 be exposed as a virtual device in the VM. You can think of this can of devices
 as a USB stick that can be plugged into the VMs and can be used as a regular
 drive. You can format it with any file system you want and mount it in your VM.
@@ -28,20 +28,19 @@ managed via OpenStack/OCCI APIs. There is a limit on the number of block
 storage devices you can attach on a VM and there is a limit to the maximum
 size of such virtual disks. These values will depend on the particular provider
 and your SLA. Moreover, the disk space is accounted for the entire block
-storage device, regardless how much of it is actually used. 
+storage device, regardless how much of it is actually used.
 
 **Object storage** is a standalone service that stores data as sets of individual
-objects, which can have different types (e.g. files, images, documents) and
-are organized within containers (e.g. folders). Each object/file has is own
-URL, which can be used to access the resource, share the file with other
-people, setup custom metadata and access control lists. These objects are
-accessed and managed via a REST API (OpenStack `SWIFT <https://docs.openstack.org/api-ref/object-store/index.html>`_). Differently from the
-block storage, there is virtually no limit to the amount of data you can store,
+objects organized within containers (e.g. folders). Each object has its own
+URL, which can be used to access the resource, to share the file with other
+people, and to setup custom metadata and access control lists. These objects are
+accessed and managed via a REST API (`OpenStack SWIFT <https://docs.openstack.org/api-ref/object-store/index.html>`_).
+Differently from the block storage, there is virtually no limit to the amount of data you can store,
 only the space used is accounted, you can access the data from any location
 (from any VM running at any EGI provider or even from other cloud providers
 or from your own laptop/browser), you can expose the data via external portals
 (using HTTP as transport protocols), you can set access control lists per
-container and even make the data publicly available. On the other hand, 
+container and even make the data publicly available. On the other hand,
 data is accessed via a API requests, thus integration with existing applications
 may require a change to the application logic.
 
@@ -69,32 +68,32 @@ Block Storage
 -------------
 
 Block storage is created and managed via requests to specific APIs. Once the
-storage is attached to a VM, it is managed as a regular block device that can be
-managed from within the VM as any other block device.
+storage is attached to a VM, it is managed as a regular disk that can be
+use as any other disk from within the VM.
 
 Management
 ::::::::::
 
-OpenStack providers offer block storage using their native API. Both the 
+OpenStack providers offer block storage using their native API. Both the
 CLI client or dashboard can be used. Main commands for managing volumes are
 listed below:
 
-+------------------------------------------+--------------------------------------+
-| Command                                  | function                             |
-+==========================================+======================================+
-| `volume create --size <size> <name>`     | create a volume of size `<size>` GBs |
-|                                          | and name `<name>`                    |
-+------------------------------------------+--------------------------------------+
-| `volume list`                            | list available volumes               | 
-+------------------------------------------+--------------------------------------+
-| `volume show <volume>`                   | show details of a given volume       | 
-+------------------------------------------+--------------------------------------+
-| `volume delete <volume>`                 | deletes a volume                     | 
-+------------------------------------------+--------------------------------------+
-| `server add volume <server> <volume>`    | Attach a volume to a server          |
-+------------------------------------------+--------------------------------------+
-| `server remove volume <server> <volume>` | Dettach a volume from a server       |
-+------------------------------------------+--------------------------------------+
++--------------------------------------------+--------------------------------------+
+| Command                                    | function                             |
++============================================+======================================+
+| ``volume create --size <size> <name>``     | create a volume of size ``<size>``   |
+|                                            | GBs and name ``<name>``              |
++--------------------------------------------+--------------------------------------+
+| ``volume list``                            | list available volumes               |
++--------------------------------------------+--------------------------------------+
+| ``volume show <volume>``                   | show details of a given volume       |
++--------------------------------------------+--------------------------------------+
+| ``volume delete <volume>``                 | deletes a volume                     |
++--------------------------------------------+--------------------------------------+
+| ``server add volume <server> <volume>``    | Attach a volume to a server          |
++--------------------------------------------+--------------------------------------+
+| ``server remove volume <server> <volume>`` | Dettach a volume from a server       |
++--------------------------------------------+--------------------------------------+
 
 For using the legacy OCCI interface refer to `OCCI How-to <https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client>`_.
 
@@ -108,10 +107,10 @@ to partition and create filesystems on the device.
 You can just create a filesystem on the block device with the following
 command (run this at your VM!).
 
-.. warning:: 
+.. warning::
 
    Only run this command the first time you use the device, it removes all data storedi
-   
+
 .. code-block:: console
 
    # mkfs.ext4 /dev/<volume device>
@@ -151,6 +150,6 @@ Usage from your application
 :::::::::::::::::::::::::::
 
 Integration of the block storage within your application will require a client
-or set of libraries to be integrated within your application that perform the 
+or set of libraries to be integrated within your application that perform the
 REST operations on the service endpoints. Check the complete `OpenStack object store API <https://docs.openstack.org/api-ref/object-store/>`_
 for more information.
