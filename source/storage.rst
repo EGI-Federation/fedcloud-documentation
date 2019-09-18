@@ -30,7 +30,7 @@ size of such virtual disks. These values will depend on the particular provider
 and your SLA. Moreover, the disk space is accounted for the entire block
 storage device, regardless how much of it is actually used. 
 
-**Object storage** is a standalone service that stores data as set of individual
+**Object storage** is a standalone service that stores data as sets of individual
 objects, which can have different types (e.g. files, images, documents) and
 are organized within containers (e.g. folders). Each object/file has is own
 URL, which can be used to access the resource, share the file with other
