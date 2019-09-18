@@ -65,7 +65,6 @@ running on a single VM. If you need to have your data exposed within portals
 or shared between different steps of your processing workflow, it is usually
 best to use the object storage.
 
-
 Block Storage
 -------------
 
