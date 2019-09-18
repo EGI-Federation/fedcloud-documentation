@@ -35,7 +35,7 @@ objects, which can have different types (e.g. files, images, documents) and
 are organized within containers (e.g. folders). Each object/file has is own
 URL, which can be used to access the resource, share the file with other
 people, setup custom metadata and access control lists. These objects are
-accessed and managed via a REST API (OpenStack SWIFT). Differently from the
+accessed and managed via a REST API (OpenStack `SWIFT <https://docs.openstack.org/api-ref/object-store/index.html>`_). Differently from the
 block storage, there is virtually no limit to the amount of data you can store,
 only the space used is accounted, you can access the data from any location
 (from any VM running at any EGI provider or even from other cloud providers
