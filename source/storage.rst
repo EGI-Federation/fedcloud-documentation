@@ -129,7 +129,7 @@ With that you can access ``/<path>`` where all your data will be available.
 Applications will not see any difference between a block storage device and a
 regular hardware disk, thus no major changes should be required in the application logic.
 
-Note that some OS, like [https://appdb.egi.eu/store/vappliance/cernvm/ CERNVM],
+Note that some OS, like `CERNVM <https://appdb.egi.eu/store/vappliance/cernvm/ CERNVM>`_,
 will automatically detect all the attached block storage and add it to theo
 root virtual file system.
 
