@@ -20,5 +20,6 @@ willing to integrate into the service, plase check `EGI Federated Cloud Integrat
    introduction
    check-in
    usage-openstack
+   storage
    gpgpu
    aod
