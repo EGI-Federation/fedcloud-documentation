@@ -146,7 +146,7 @@ OpenStack SWIFT offers a RESTful API to manage your storage. As with block
 storage you can manage it via the OpenStack CLI or web dashboard.
 
 Available SWIFT providers resources can be discovered in `GOCDB <https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=>`_.
-For accessing the endpoint check the `URL` of the specific provider.
+For accessing the endpoint check the ``URL`` of the specific provider.
 
 Usage from your application
 :::::::::::::::::::::::::::
