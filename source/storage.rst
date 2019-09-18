@@ -69,7 +69,7 @@ Block Storage
 -------------
 
 Block storage is created and managed via requests to specific APIs. Once the
-storage is attached to a VM, is managed as a regular block device that can be
+storage is attached to a VM, it is managed as a regular block device that can be
 managed from within the VM as any other block device.
 
 Management
