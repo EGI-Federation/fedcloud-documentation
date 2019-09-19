@@ -199,7 +199,8 @@ Creating a snapshot image from running VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can create a new image from a snapshot of an existing VM that will allow
-you to easily recover a previous version of your VM.
+you to easily recover a previous version of your VM or to use it as a template
+to clone a given VM.
 
 .. code-block:: console
 
