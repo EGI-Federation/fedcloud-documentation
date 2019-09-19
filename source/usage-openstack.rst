@@ -223,7 +223,6 @@ You can override files in the snapshot if needed, e.g. changing the SSH keys:
      --file /home/ubuntu/.ssh/authorized_keys=my_new_keys \
      <name of the new VM>
 
-
 Terraform
 ---------
 
