@@ -69,7 +69,7 @@ Block Storage
 
 Block storage is created and managed via requests to specific APIs. Once the
 storage is attached to a VM, it is managed as a regular disk that can be
-use as any other disk from within the VM.
+used as any other disk from within the VM.
 
 Management
 ::::::::::
