@@ -49,12 +49,9 @@ To deploy the virtual cluster on the HNSciCloud pilot services, select the
 voucher option and click on *Next* and provide additional information for
 profiling the order (e.g. the motivation for requesting the service).
 
-**This makes little sense**
-If the user has already an Exoscale voucher to redeem, the voucherID
-can be provided by the user during the submission of the
-service-order request, otherwise a valid voucherID will be provided
-by the operator of the service in case the user’s vetting process is
-successful.
+Users with an existing Exoscale voucher to redeem can provide the voucherID
+during the submission request. Otherwise, a valid voucherID will be provided
+once the order if processed and accepted.
 
 Once the service order is submitted, the marketplace will send a notification
 via email. Users can at any time the status of their orders through the user
