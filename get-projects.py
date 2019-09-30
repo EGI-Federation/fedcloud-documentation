@@ -25,6 +25,7 @@ def get_access_token(client_id, client_secret, refresh_token):
     }
     r = requests.post("https://aai.egi.eu/oidc/token",
                       auth=(client_id, client_secret), data=refresh_data)
+    r.raise_for_status()
     return r.json()['access_token']
 
 
@@ -38,17 +39,34 @@ def get_keystone_url(os_auth_url, path):
 
 
 def get_unscoped_token(os_auth_url, access_token):
+    """Get an unscopped token, trying various protocol names if needed"""
+    try:
+        unscoped_token = retrieve_unscoped_token(os_auth_url, access_token)
+    except RuntimeError:
+        unscoped_token = retrieve_unscoped_token(os_auth_url, access_token,
+                                                 'openid')
+
+    return unscoped_token
+
+
+def retrieve_unscoped_token(os_auth_url, access_token, method='oidc'):
+    """Request an unscopped token"""
     url = get_keystone_url(
         os_auth_url,
-        "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/oidc/auth")
+        "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/%s/auth" %
+        method)
     r = requests.post(url,
                       headers={'Authorization': 'Bearer %s' % access_token})
-    return r.headers['X-Subject-Token']
+    if r.status_code != requests.codes.created:
+        raise RuntimeError('Unable to get an unscoped token')
+    else:
+        return r.headers['X-Subject-Token']
 
 
 def get_projects(os_auth_url, unscoped_token):
     url = get_keystone_url(os_auth_url, "/v3/auth/projects")
     r = requests.get(url, headers={'X-Auth-Token': unscoped_token})
+    r.raise_for_status()
     return r.json()['projects']
 
 
@@ -61,8 +79,8 @@ def main():
     os_auth_url = os.environ.get('OS_AUTH_URL', '')
 
     access_token = get_access_token(client_id, client_secret, refresh_token)
-    projects = get_projects(os_auth_url,
-                            get_unscoped_token(os_auth_url, access_token))
+    unscoped_token = get_unscoped_token(os_auth_url, access_token)
+    projects = get_projects(os_auth_url, unscoped_token)
     for p in projects:
         print('ID: %(id)s - Name: %(name)s - Enabled: %(enabled)s' % p)
 

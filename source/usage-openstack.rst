@@ -194,6 +194,36 @@ cloud-config data as user data
 * `Official cloud-config examples <https://cloudinit.readthedocs.io/en/latest/topics/examples.html#yaml-examples>`_
 * `Cloud-init example <https://www.zetta.io/en/help/articles-tutorials/customizing-instance-deployment-cloud-init/>`_
 
+
+Creating a snapshot image from running VM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can create a new image from a snapshot of an existing VM that will allow
+you to easily recover a previous version of your VM or to use it as a template
+to clone a given VM.
+
+.. code-block:: console
+
+   openstack server image create <your VM> --name <name of the snapshot>
+
+Once the snapshot is ready (``openstack image show <name of the snapshot>`` will
+give your the details you can use it as any other image at the provider:
+
+.. code-block:: console
+
+   openstack server create --flavor <flavor> \
+     --image <name of the snapshot> \
+     <name of the new VM>
+
+You can override files in the snapshot if needed, e.g. changing the SSH keys:
+
+.. code-block:: console
+
+   openstack server create --flavor <flavor> \
+     --image <name of the snapshot> \
+     --file /home/ubuntu/.ssh/authorized_keys=my_new_keys \
+     <name of the new VM>
+
 Terraform
 ---------
 
