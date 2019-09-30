@@ -326,6 +326,7 @@ Applications on Demand service:
    :maxdepth: 1
 
    chipster
+   exoscale-vouchers
 
 References
 ----------
