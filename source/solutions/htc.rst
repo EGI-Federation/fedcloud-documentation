@@ -71,7 +71,7 @@ The cluster will be configured with the following templates:
    #torque (default template), 
    #configure_nfs (patched template), 
    #ubuntu-1604-occi-INFN-CATANIA-STACK (user's template), 
-   #cluster_configure (user's template)</pre>. 
+   #cluster_configure (user's template) 
 
 User’s templates are stored in ``$HOME/ec3/templates``
 
@@ -213,7 +213,6 @@ This section contains the templates used to configure the cluster.
          become: yes
    @end
    ) 
-</pre>
 
 ``ubuntu-1604-occi-INFN-CATANIA-STACK.radl``:
 
@@ -314,78 +313,76 @@ To access the cluster, use the command:
 Configuration of the cluster
 ----------------------------
 
-=== a.) Enable Password-based authentication ===
+Enable Password-based authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Change settings in /etc/ssh/sshd_config
+Change settings in ``/etc/ssh/sshd_config``
 
-<pre>
-# Change to no to disable tunnelled clear text passwords
-PasswordAuthentication yes
-</pre>
+.. code-block::
 
-Restart the ssh daemon:
-<pre>
-]$ sudo service ssh restart
-</pre>
+   # Change to no to disable tunnelled clear text passwords
+   PasswordAuthentication yes
 
-=== b.) Configure the number of processors of the cluster ===
+and restart the ssh daemon:
 
-<pre>
-]$ cat /var/spool/torque/server_priv/nodes
-wn1 np=XX
-wn2 np=XX
-[..] 
-</pre>
+.. code-block:: console 
+
+   sudo service ssh restart
+
+Configure the number of processors of the cluster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console 
+
+   $ cat /var/spool/torque/server_priv/nodes
+   wn1 np=XX
+   wn2 np=XX
+   [...] 
 
 To obtain the number of CPU/cores (np) in Linux, use the command:
 
-<pre>
-]$ lscpu | grep -i CPU
-CPU op-mode(s):         32-bit, 64-bit
-CPU(s):                 16
-On-line CPU(s) list:    0-15
-CPU family:             6
-Model name:             Intel(R) Xeon(R) CPU E5520  @ 2.27GHz
-CPU MHz:                2266.858
-NUMA node0 CPU(s):      0-3,8-11
-NUMA node1 CPU(s):      4-7,12-15
-</pre>
+.. code-block:: console 
 
-=== c.) Test the cluster ===
+   $ lscpu | grep -i CPU
+   CPU op-mode(s):         32-bit, 64-bit
+   CPU(s):                 16
+   On-line CPU(s) list:    0-15
+   CPU family:             6
+   Model name:             Intel(R) Xeon(R) CPU E5520  @ 2.27GHz
+   CPU MHz:                2266.858
+   NUMA node0 CPU(s):      0-3,8-11
+   NUMA node1 CPU(s):      4-7,12-15
+
+Test the cluster
+^^^^^^^^^^^^^^^^
 
 Create a simple test script:
 
-<pre>
-]$ cat test.sh
+.. code-block:: console 
 
-#!/bin/bash
-#PBS -N job
-#PBS -q batch
+   $ cat test.sh
+   #!/bin/bash
+   #PBS -N job
+   #PBS -q batch
 
-#cd $PBS_O_WORKDIR/
-hostname -f
-sleep 5
-</pre>
+   #cd $PBS_O_WORKDIR/
+   hostname -f
+   sleep 5
 
 Submit to the batch queue:
 
-<pre>
-]$ qsub -l nodes=2 test.sh
-</pre>
+.. code-block:: console
 
-== Destroy the cluster ==
+   $ qsub -l nodes=2 test.sh
+
+Destroy the cluster 
+-------------------
 
 To destroy the running cluster, use the command:
 
-<pre>
-]$ cd $HOME
-]$ sudo docker run -ti -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy unicam_cluster
+.. code-block:: console
 
-WARNING: you are going to delete the infrastructure (including frontend and nodes).
-Continue [y/N]? y
-Success deleting the cluster!
-</pre>
-
-
-== References ==
-*https://github.com/grycap/ec3
+   docker run -ti -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy unicam_cluster
+   WARNING: you are going to delete the infrastructure (including frontend and nodes).
+   Continue [y/N]? y
+   Success deleting the cluster!
