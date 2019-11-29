@@ -325,8 +325,8 @@ Applications on Demand service:
 .. toctree::
    :maxdepth: 1
 
-   chipster
-   exoscale-vouchers
+   aod/chipster
+   aod/exoscale-vouchers
 
 References
 ----------
