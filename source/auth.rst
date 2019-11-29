@@ -1,30 +1,94 @@
 .. toctree::
 
 .. _`FedCloud Check-in client`: https://aai.egi.eu/fedcloud
+.. _`AppDB`: https://appdb.egi.eu
 
 Authentication
 ==============
 
-.. _oidc-auth-using-check-in:
+Authorisation
+-------------
 
-OpenID Connect using Check-in
------------------------------
+Cloud Compute service is accessed through **Virtual Organisations (VOs)**. A VO
+is a grouping of IaaS cloud providers from the federation, who allocate capacity
+for a specific user group. Users with similar interest/requirements can join or
+form a VO to gather resources from EGI cloud providers - typically for a given
+project, experiment or use case. There are generic VOs too, for example the
+vo.access.egi.eu VO, which is open for any user who wants to experiment with the
+service. **You have to join a VO before you can interact with the cloud
+resources**, while higher level services (PaaS, SaaS) do not always require
+VO membership.
 
-`OpenID Connect <http://openid.net/connect/>`_ is an authentication protocol
-based on OAuth 2.0 and replacing the current VOMS-based authentication on the
-EGI Cloud.
+Users that are members of a VO will have access to the providers supporting
+that VO: they will be able to manage VMs, block storage and object storage
+available to the VO. Resources (VMs and storage) are shared across all members
+of the VO, please do not interfere with the VMs of other users if you are not
+entitled to do so (specially do not delete them).
 
-The providers natively integrated with EGI Check-in are able to authenticate
-users with OAuth 2.0 tokens without using any certificates in the process by
-relying on the OpenStack Keystone `OS-FEDERATION API <https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api>`_.
+Some users roles have special consideration in VOs:
 
-.. TODO(enolfc): discovery of providers with check-in support?
+* Users with VO Manager, VO Deputy or VO Expert Role have extra pivileges in
+  the AppDB for managing the Virtual Appliances to be avaialable at every
+  provider. Check the AppDB guide on VO-wide image list management for more
+  information.
 
+
+Pilot VO
+^^^^^^^^
+
+The `vo.access.egi.eu Virtual Organisation <https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu>`_
+serves as a test ground for users to try the Cloud Compute service and to
+prototype and validate applications. It can be used for up to 6 month by any
+new user.
+
+.. warning::
+
+  * After the 6-month long membership in the fedcloud.egi.eu VO, you will need
+    to move to a production VO, or establish a new VO.
+
+  * The resources are not guaranteed and may be removed without notice by
+    providers. **Back-up frequently to avoid loosing your work!**
+
+For joining this VO, just place an order in the `EGI Marketplace <https://marketplace.egi.eu/31-cloud-compute>`_
+and once approved you will be able to interact with the infrastructure.
+and we will invite providers from the infrastructure to support your needs.
+
+
+Other VOs
+^^^^^^^^^
+
+.. TODO: Add link to TCS
+
+Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
+your VO manager or browse the existing VOs at the `EGI Operations Portal <https://operations-portal.egi.eu/vo/search>`_
+(filter for cloud in the middleware column). Joining these VOs may require a
+personal X.509 certificate. For getting one certificate, the easiest option is
+to get an ‘eScience Personal’ certificate online from the Terena Certificate
+Service CA. Check the countries where this is available, and follow the link to
+the respective CA page at the TCS participants list.
+
+If eScience Personal certificate is not available in your country, then obtain
+a certificate from a regular IGTF CA (this may require a personal visit at the
+Certification Authority).
+
+Authentication
+--------------
+
+`OpenID Connect <http://openid.net/connect/>`_ is the main authentication
+protocol used on the EGI Cloud. It replaces the legacy VOMS-based authentication
+for all OpenStack providers.
+
+Authentication to web based services (like the AppDB) will redirect you to the
+EGI Check-in authentication page. Just select your institution or social login
+and follow the regular authentication process.
+
+Access to APIs or via Command Line Interfaces (CLI) requires the use of OAuth2.0
+tokens and interaction with the OpenStack Keystone `OS-FEDERATION API <https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api>`_.
 The process for authentication is as follows:
 
-#. Obtain a valid access token from Check-in. Access tokens are short-lived
-   credentials that can be obtained by recognised Check-in clients once a user
-   has been authenticated.
+#. Obtain a valid OAuth2.0 access token from Check-in. Access tokens are
+   short-lived credentials that can be obtained by recognised Check-in clients
+   once a user has been authenticated.
 
 #. Interchange the Check-in access token for a valid unscoped Keystone token.
 
@@ -35,8 +99,8 @@ The process for authentication is as follows:
 
 The sections below detail how to achieve this as a EGI Cloud user.
 
-EGI Check-in FedCloud client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Check-in Access tokens
+^^^^^^^^^^^^^^^^^^^^^^
 
 Access tokens can obtained via several mechanisms, usually involving the use of
 a web server and a browser. Command line clients/APIs without access to a
@@ -62,14 +126,13 @@ Note them down so you can use them for the next steps.
 Discovering projects in Keystone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your access token will provide you access to a cloud provider, but you may have
+The *access token* will provide you access to a cloud provider, but you may have
 access to several different projects within that provider (a project can be
-considered as equal to a VO allocation). In order to discover which projects
+considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-The :download:`../get-projects.py` script will just do that for you (requires
-``requests`` library). It expects these variables to be defined in the
-environment:
+You can user the `egicli` to simplify the discovery of porjects. First, define
+these variables in the envrionment:
 
 * ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from
   `FedCloud Check-in client`_)
@@ -77,10 +140,10 @@ environment:
   `FedCloud Check-in client`_)
 * ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from
   `FedCloud Check-in client`_)
-* ``OS_AUTH_URL``: Keystone URL (depends on the provider, you can get it in
-  `GOCDB <https://goc.egi.eu>`_)
+* ``EGI_SITE``: Name of the site (get it from `AppDB`_, or list it with
+  the `egicli endpoint list` command)
 
-.. TODO(enolfc): discovery of Keystone URL?
+And use them to get the list of projects:
 
 .. code-block:: console
 
@@ -88,53 +151,12 @@ environment:
    export CHECKIN_CLIENT_ID=<CLIENT_ID>
    export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
    export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-   # Select OpenStack endpoint
-   export OS_AUTH_URL=<OPENSTACK_URL>
-   # Retrieve project ID
-   python get-projects.py
+   # Retrieve list of projects from site
+   export EGI_SITE=<NAME_OF_THE_SITE>
+   egicli endpoint projects
 
-.. warning::
-
-   **Use of IGTF CAs**
-
-   If you get certificate validation errors, you may need to install the IGTF
-   CAs and configure the request libraries to use them. If you don't have the
-   CA certificates installed in your machine, you can get them from the `UMD
-   EGI core Trst Anchor Distribution <http://repository.egi.eu/?category_name=cas>`_.
-
-   Once installed, get the location of the requests CA bundle with:
-
-   .. code-block:: console
-
-     python -m requests.certs
-
-   If the output of that command is ``/etc/ssl/certs/ca-certificates.crt``,
-   you can add IGTF CAs by executing:
-
-   .. code-block:: console
-
-     cd /usr/local/share/ca-certificates
-     for f in /etc/grid-security/certificates/*.pem ; do ln -s $f $(basename $f .pem).crt; done
-     update-ca-certificates
-
-
-   If the output is ``/etc/pki/tls/certs/ca-bundle.crt`` add the IGTF CAs with:
-
-   .. code-block:: console
-
-     cd /etc/pki/ca-trust/source/anchors
-     ln -s /etc/grid-security/certificates/*.pem .
-     update-ca-trust extract
-
-   Otherwise, you are using internal requests bundle, which can be augmented
-   with the IGTF CAs with:
-
-   .. code-block:: console
-
-     cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
-
-Access the provider
-^^^^^^^^^^^^^^^^^^^
+Using the OpenStack API
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
@@ -145,34 +167,43 @@ commands for performing actual operations in the provider:
    export CHECKIN_CLIENT_ID=<CLIENT_ID>
    export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
    export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-   # Select OpenStack endpoint
-   export OS_AUTH_URL=<OPENSTACK_URL>
-   # Use the previously discovered ID
-   export OS_PROJECT_ID=<PROJECT_ID>
-   export OS_IDENTITY_PROVIDER=egi.eu
-   export OS_AUTH_TYPE=v3oidcaccesstoken
-   export OS_PROTOCOL=openid
-   # Retrieve access token
-   export OS_ACCESS_TOKEN=$(curl -s -X POST -u "$CHECKIN_CLIENT_ID":"$CHECKIN_CLIENT_SECRET"  \
-        -d "client_id=$CHECKIN_CLIENT_ID&$CHECKIN_CLIENT_SECRET&grant_type=refresh_token&refresh_token=$CHECKIN_REFRESH_TOKEN&scope=openid%20email%20profile" \
-       'https://aai.egi.eu/oidc/token' | jq -r '.access_token')
+   # EGI site
+   export EGI_SITE=<NAME_OF_THE_SITE>
+   # get environment variables for openstack
+   . $(egicli endpoint env)
    openstack image list
+
+
+For 3rd party tools that can use token based authentication in OpenStack,
+use the following command (after setting the environment as shown above):
+
+.. code-block:: console
+
+   # Export OIDC env
+   export CHECKIN_CLIENT_ID=<CLIENT_ID>
+   export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
+   export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
+   # EGI site
+   export EGI_SITE=<NAME_OF_THE_SITE>
+   export OS_TOKEN=$(egicli endpoint token)
+
+Technical details
+^^^^^^^^^^^^^^^^^
 
 .. note::
 
-   For 3rd party tools that can use token based authentication in OpenStack,
-   use the following command (after setting the environment as shown above):
+   You can safely ignore this section. It details the API call used to
+   refresh tokens and use them for authentication at the providers.
 
-   .. code-block:: console
+Getting access tokens from refresh tokens uses OAuth2.0 token refesh:
 
-     export OS_ACCESS_TOKEN=$(curl -s -X POST -u "$CHECKIN_CLIENT_ID":"$CHECKIN_CLIENT_SECRET"  \
-        -d "client_id=$CHECKIN_CLIENT_ID&$CHECKIN_CLIENT_SECRET&grant_type=refresh_token&refresh_token=$CHECKIN_REFRESH_TOKEN&scope=openid%20email%20profile" \
-       'https://aai.egi.eu/oidc/token' | jq -r '.access_token')
-     export OS_TOKEN=$(openstack token issue -c id -f value)
+Legacy x.509 AAI
+----------------
 
+.. warning::
 
-VOMS (to be deprecated)
------------------------
+   OpenID Connect is the preferred federated identity tehcnoloy on EGI Cloud.
+   Use of X.509 certificates should be limited to legacy applications.
 
 `VOMS <https://italiangrid.github.io/voms/index.html>`_ uses X.509 proxies
 extended with VO information for authentication and authorisation on the
