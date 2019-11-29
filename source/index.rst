@@ -24,6 +24,7 @@ willing to integrate into the service, plase check `EGI Federated Cloud Integrat
    storage
    gpgpu
    vmi
+   containers
    aod
    solutions
    training
