@@ -18,8 +18,14 @@ willing to integrate into the service, plase check `EGI Federated Cloud Integrat
    :caption: Contents:
 
    introduction
-   check-in
+   auth 
+   vmops
    usage-openstack
    storage
    gpgpu
+   vmi
    aod
+   solutions
+   training
+   federation 
+   faq
