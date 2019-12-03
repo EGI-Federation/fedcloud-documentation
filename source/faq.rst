@@ -16,8 +16,8 @@ How can I get an OAuth2.0 token?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Authentication via CLI or API requires a valid Check-in token. The
-`FedCloud Check-in client`_ web allows you to get one as needed. Check the
-`Authentication`_ guide for more information.
+FedCloud Check-in client allows you to get one as needed. Check the
+authentication guide for more information.
 
 How can I get the list of the EGI Cloud providers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
