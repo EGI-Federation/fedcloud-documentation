@@ -3,10 +3,42 @@
 Virtual Machine Image Management
 ================================
 
+Users of the EGI Cloud, create Virtual Machines (VMs) on the providers. Those
+VMs are started from images: templates for the root volume of the running
+instances, i.e. operating system and applications available initially on a VM.
+The AppDB collects the Virtual Machine Images available on the service as
+Virtual Appliances (VA).
+
+Any user can register new Virtual Appliances at the AppDB, these are then
+managed by special VO members that curate which appliances are available to
+their VO.
+
 AppDB Cloud Marketplace
 -----------------------
 
-.. TODO: yep
+.. image:: img/appdb_cloud.png
+   :width: 900px
+   :alt: AppDB Cloud Marketplace
+
+The `AppDB <https://appdb.egi.eu>`_ is a browsable catalogue of Virtual
+Appliances that users can start at the providers. You can find below a set
+of reference guides for the catalogue:
+
+* `How to register a VA? <https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appliance>`_:
+  any registered user can register VAs in AppDB for anyone to download or for
+  making them available at the EGI Cloud providers once a VO adds it to the
+  *VO-wide image list*.
+
+* Once registered, VAs can be managed as described in the `VA management guide
+  <https://wiki.appdb.egi.eu/main:guides:guide_for_managing_virtual_appliance_versions_using_the_portal>`_.
+
+* VO managers select VAs to be available at the providers following the `VO-wide
+  image list management <https://wiki.appdb.egi.eu/main:guides:manage_vo-wide_image_lists>`_.
+
+Check the full list of `Cloud marketplace guides <https://wiki.appdb.egi.eu/main:guides#cloud_marketplace>`_
+and `Cloud marketplace FAQ <https://wiki.appdb.egi.eu/main:faq#cloud_marketplace>`_
+for more information about the AppDB features.
+
 
 Custom images
 -------------
@@ -69,7 +101,7 @@ Disadvantages:
 Image size and layout
 ^^^^^^^^^^^^^^^^^^^^^
 
-The larger the VM image, the longer it will take to be distributed to the 
+The larger the VM image, the longer it will take to be distributed to the
 providers and the longer it will take to be started on the infrastructure. As a
 general rule, always try to make images as smaller as possible following these
 guidelines:
@@ -93,13 +125,13 @@ guidelines:
 
 * **DO** fill with ``0`` the empty disk space of your image so when compressed
   it can be significantly reduced, e.g. using:
-  
+
   .. code-block:: console
 
      dd if=/dev/zero of=/bigemptyfile bs=4096k
      rm -rf /bigemptyfile
-     
-  Check `this compacting a vmdk VM disk guide <http://splatoperator.com/2012/07/compacting-a-vmdk-virtual-machine-disk-format-image/>`_ 
+
+  Check `this compacting a vmdk VM disk guide <http://splatoperator.com/2012/07/compacting-a-vmdk-virtual-machine-disk-format-image/>`_
   for more info.
 
 * **DO** use a single partition (no /boot, no swap) for the disk layout and
@@ -112,7 +144,7 @@ Contextualization and credentials
 .. danger::
 
    **Do NOT include any credentials on your images**.
-   
+
 You should never include any kind of credentials on your images, instead you
 should use contextualization. `cloud-init <https://cloudinit.readthedocs.io/en/latest/>`_
 is a tool that will simplify the contextualization process for you. This is
@@ -123,7 +155,7 @@ the providers of the EGI Cloud and most of the commercial providers.
 documentation contains detailed examples on how to create users, run scripts,
 install packages and several other actions supported by the tool.
 
-For complex setups, specially when applications involve multiple VMs it may be 
+For complex setups, specially when applications involve multiple VMs it may be
 useful to use cloud-init to bootstrap some `Configuration Management Software
 <https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software>`_
 that will manage the configuration of the VMs during runtime.
@@ -150,7 +182,7 @@ See also `AWS security Best Practices <https://aws.amazon.com/whitepapers/aws-se
 
 .. TODO: Secant
 
-Tools 
+Tools
 ^^^^^
 
 Whenever possible, automate the process of creating your images. This will

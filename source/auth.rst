@@ -131,7 +131,7 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can user the `egicli` to simplify the discovery of porjects. First, define
+You can use the ``egicli`` to simplify the discovery of porjects. First, define
 these variables in the envrionment:
 
 * ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from
@@ -169,6 +169,7 @@ commands for performing actual operations in the provider:
    export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
    # EGI site
    export EGI_SITE=<NAME_OF_THE_SITE>
+   export OS_PROJECT_ID=<PROJECT_ID>
    # get environment variables for openstack
    . $(egicli endpoint env)
    openstack image list

@@ -19,11 +19,11 @@ willing to integrate into the service, plase check `EGI Federated Cloud Integrat
 
    introduction
    auth 
+   vmi
    vmops
    usage-openstack
    storage
    gpgpu
-   vmi
    containers
    aod
    solutions
