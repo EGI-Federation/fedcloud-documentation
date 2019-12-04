@@ -141,7 +141,7 @@ these variables in the envrionment:
 * ``CHECKIN_REFRESH_TOKEN``: Your Check-in refresh token (get it from
   `FedCloud Check-in client`_)
 * ``EGI_SITE``: Name of the site (get it from `AppDB`_, or list it with
-  the `egicli endpoint list` command)
+  the ``egicli endpoint list`` command)
 
 And use them to get the list of projects:
 
@@ -171,7 +171,7 @@ commands for performing actual operations in the provider:
    export EGI_SITE=<NAME_OF_THE_SITE>
    export OS_PROJECT_ID=<PROJECT_ID>
    # get environment variables for openstack
-   . $(egicli endpoint env)
+   eval "$(egicli endpoint env)"
    openstack image list
 
 
@@ -186,7 +186,7 @@ use the following command (after setting the environment as shown above):
    export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
    # EGI site
    export EGI_SITE=<NAME_OF_THE_SITE>
-   export OS_TOKEN=$(egicli endpoint token)
+   eval "$(egicli endpoint token)"
 
 Technical details
 ^^^^^^^^^^^^^^^^^
