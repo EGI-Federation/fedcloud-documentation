@@ -161,14 +161,6 @@ The presentations and hands-on materials from the events are available here:
 * `Introduction to Jupyter and Open Science - Training (27 September 2019,
   Yervan) <http://go.egi.eu/eapec2019>`_.
 
-Advanced Usage
---------------
-
-.. FIXME: inner link?
-
-To configure an HTC clusters on top of IaaS infastructure, please check the 
-guide?
-
 Booking the infrastructure 
 --------------------------
 
