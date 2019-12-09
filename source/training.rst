@@ -26,7 +26,7 @@ Usage models
 The training infrastructure is suitable for two types of courses:
 
 * Cloud computing courses: Such courses teach students about IaaS clouds and
-  the how Virtual Appliances, Virtual Machines, block storage and other types
+  on how Virtual Appliances, Virtual Machines, block storage and other types
   of ‘low level’ resources are managed. For such courses, the trainer does not
   need to deploy applications or online services in advance of the course.
   The applications/services will be deployed by the students themselves as
