@@ -221,7 +221,7 @@ Tools
 
 * `OSCAR <https://o-scar.readthedocs.io/>`_ is a framework designed to efficiently
   support on-premises FaaS (Functions as a Service) for general-purpose
-  fileprocessing computing applications.
+  file processing computing applications.
 
   Access via the EC3 portal `EC3 portal`_.
 
@@ -250,12 +250,13 @@ FutureGateway Science Gateway
 
 The `FutureGateway Science Gateway (FGSG) <http://www.catania-science-gateways.it/>`_
 is a programmable interface of a RESTful API Server, compliant with CSGF APIs
-specifications, able to provide an easy acces to the PaaS layer by leveraging
+specifications, able to provide an easy access to the PaaS layer by leveraging
 on recent Web technologies.
 
 * The FGSG incorporates several applications and offers these "as services"
   for the user.
-* The FGSG provides users with an intuitive web interface to execute dockerized
+
+* The FGSG provides users with an intuitive web interface to execute docker
   applications on the cloud resources of the platform.
 
   * The FGSG take cares of starting the job in one of the available resources
@@ -325,8 +326,8 @@ Applications on Demand service:
 .. toctree::
    :maxdepth: 1
 
-   chipster
-   exoscale-vouchers
+   aod/chipster
+   aod/exoscale-vouchers
 
 References
 ----------

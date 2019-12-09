@@ -5,7 +5,7 @@ Introduction
 
 EGI Cloud Compute gives you the ability to deploy and scale virtual machines
 on-demand. It offers computational resources in a secure and isolated
-environment contolled via APIs without the overhead of managing physical
+environment controlled via APIs without the overhead of managing physical
 servers.
 
 Cloud Compute service is provided through a federation of IaaS cloud sites that
@@ -63,62 +63,57 @@ emerged:
 * **Disposable and testing environments**: environments for training or testing
   new developments.
 
-  * Example: `Training infrastructure <https://wiki.egi.eu/wiki/Training_infrastructure>`_.
+  * Example: `Training infrastructure <https://www.egi.eu/services/training-infrastructure/>`_
 
-Getting access
---------------
 
-Cloud Compute service is accessed through **Virtual Organisations (VOs)**. A VO
-is a grouping of IaaS cloud providers from the federation, who allocate capacity
-for a specific user group. Users with similar interest/requirements can join or
-form a VO to gather resources from EGI cloud providers - typically for a given
-project, experiment or use case. There are generic VOs too, for example the
-fedcloud.egi.eu VO, which is open for any user who wants to experiment with the
-service. **You have to join a VO before you can interact with the cloud
-resources**, while higher level services (PaaS, SaaS) do not always require
-VO membership.
+EGI Federated Cloud task force
+------------------------------
 
-Most of the existing VOs in EGI rely on X.509 certificates for user
-authentication. While we are transitioning to a certificate-less experience for
-using the service, membership to the VO still require users to obtain a personal
-certificate from a recognised Certification Authoriy (unless you have one
-already)
+The EGI Federated Cloud task force gathers together scientific communities,
+R&D projects, and technology and resource providers so they can design the
+tools and services that support the federation of providers, can share best
+practices, and can offer user support and training in a collaborative fashion.
+This enables community cloud solutions to develop faster, with a lower cost and
+with a more sustainable future. The task force members:
 
-Obtaining a certificate
-^^^^^^^^^^^^^^^^^^^^^^^
+* Capture requirements from user communities needing federated cloud services.
 
-The easiest option is to get an 'eScience Personal' certificate online from the
-Terena Certificate Service CA. Check the countries where this is available,
-and follow the link to the respective CA page at the `TCS participants <https://www.terena.org/activities/tcs/participants.html>`_
-list (See FAQs for details.)
+* Identify, integrate and enhance open source tools and services that enable
+  cloud federations for research and education.
 
-If eScience Personal certificate is not available in your country, then obtain
-a certificate from a regular `IGTF CA <https://www.eugridpma.org/members/worldmap/>`_
-(this may require a personal visit at the CA).
+* Develop and maintain tools and services to fill gaps in third party solutions
+  to reach production quality cloud federations.
 
-Join pilot VO
-^^^^^^^^^^^^^
+* Provide consultancy and training for communities on how to build a federated
+  cloud to meet custom community demands under certain constraints.
 
-The `fedcloud.egi.eu Virtual Organisation <https://operations-portal.egi.eu/vo/view/voname/fedcloud.egi.eu>`_
-serves as a test ground for users to try the Cloud Compute service and to
-prototype and validate applications. It can be used for up to 6 month by any
-new user.
+* Provide training and support for existing and potential users of cloud
+  federations about topics, such as how to port or develop cloud-native
+  applications; how to operate services in the cloud; or how to join a cloud
+  federation as a provider.
 
-.. warning::
+* Facilitate the reuse of cloud federation tools and services across
+  participating cloud federations to lower total cost of development and to
+  improve cloud sustainability.
 
-  * After the 6-month long membership in the fedcloud.egi.eu VO, you will need
-    to move to a production VO, or establish a new VO.
+* Promote Platform as a Service (PaaS) and Software as a Service (SaaS)
+  environments that are proven to be robust and reusable across communities to
+  interact with federated IaaS.
 
-  * The resources are not guaranteed and may be removed without notice by
-    providers. **Back-up frequently to avoid loosing your work!**
+* Provide service management and security oversight for participating clouds
+  and cloud federations.
 
-Other VOs
-^^^^^^^^^
+* Act as a discussion forum where cloud federations can be discussed and
+  specific questions can be analysed with top-world experts.
 
-Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
-your VO manager. If none of the existing VOs matches your use case, then a
-new VO can be created. Place an order in `EGI Marketplace <https://marketplace.egi.eu/31-cloud-compute>`_
-and we will invite providers from the infrastructure to support your needs.
+* Organise dissemination and marketing events, workshops and conferences
+  relating to the topics of the collaboration.
 
-You can browse existing VOs at the `EGI Operations Portal <https://operations-portal.egi.eu/vo/search>`_
-(filter for cloud in the middleware column).
+.. note::
+
+   If you are interested in joining the EGI FedCloud Task Force, please send an
+   email to ``fedcloud-tf _at_ mailman.egi.eu`` introducing yourself.
+
+   We hold meetings regularly Tuesdays at 11.00 CE(S)T every two weeks. Check
+   our `indico category <https://indico.egi.eu/indico/categoryDisplay.py?categId=159>`_
+   for minutes and upcoming events.
