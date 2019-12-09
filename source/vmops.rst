@@ -66,7 +66,6 @@ Quick start
       :width: 900px
       :alt: Topology settings
 
-
 #. Click on "Launch" and your deployment will be submitted to the infrastructure.
 
 The topology you just created will appear on your "Topologies" with all the
