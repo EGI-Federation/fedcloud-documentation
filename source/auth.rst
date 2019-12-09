@@ -101,7 +101,7 @@ The sections below detail how to achieve this as a EGI Cloud user.
 Check-in Access tokens
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Access tokens can obtained via several mechanisms, usually involving the use of
+ Access tokens can be obtained via several mechanisms, usually involving the use of
 a web server and a browser. Command line clients/APIs without access to a
 browser or interactive prompt for user authentication can use refresh tokens. A
 refresh token is a special token that is used to generate additional access
