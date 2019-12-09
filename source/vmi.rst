@@ -39,7 +39,6 @@ Check the full list of `Cloud marketplace guides <https://wiki.appdb.egi.eu/main
 and `Cloud marketplace FAQ <https://wiki.appdb.egi.eu/main:faq#cloud_marketplace>`_
 for more information about the AppDB features.
 
-
 Custom images
 -------------
 
