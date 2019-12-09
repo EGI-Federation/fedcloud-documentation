@@ -78,7 +78,7 @@ User’s templates are stored in ``$HOME/ec3/templates``
 .. code-block:: console
 
    docker run -v /home/centos/:/tmp/ \
-              -v /home/centos/ec3/templates:/etc/ec3/templates \
+              -v /home/centos/ec3/templates:/root/.ec3/templates \
               -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch unicam_cluster \
               torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure configure_nfs \
               -a /tmp/auth_INFN-CATANIA-STACK.dat
