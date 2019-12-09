@@ -26,7 +26,6 @@ Main user features
 
 * Single control of topologies across the whole federation.
 
-
 Quick start
 -----------
 
