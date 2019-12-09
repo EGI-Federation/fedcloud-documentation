@@ -123,7 +123,7 @@ The integration relies on the OpenStack Keystone `OS-FEDERATION API <https://dev
 Legacy VOMS / X.509 certificates
 ::::::::::::::::::::::::::::::::
 
-EGI can support those users still using X.509 certificates extended
+EGI can support users still using X.509 certificates extended
 with VO attributes (e.g. acknowledging that the user is member of the VO)
 in a so called VOMS proxy. This VOMS proxy certificate is used in subsequent
 calls to the endpoints which map the certificate and VO information
