@@ -9,7 +9,7 @@ catalogue and application management portal) for face-to-face events, online
 training courses or self-paced learning modules.
 
 The training infrastructure is integrated with Check-in allowing trainers to
-generate short-living user accounts for training participants. Such accounts
+generate short-lived user accounts for training participants. Such accounts
 can identify students individually, and for a limited lifetime - typically few
 hours or days, depending on the length of the training event - allow them to
 interact with the services.
