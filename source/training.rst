@@ -80,7 +80,7 @@ Modules and examples
 
 The training infrastructure was used in July 2015 for two face-to-face
 training courses that trained programmers about the use of the EGI Cloud (the
-first operational model above). The focus of these courses were on the use of
+first operational model above). The focus of these courses was on the use of
 the rOCCI client to interact with the providers (instantiate, delete, access
 VMs). During these courses the training infrastructure included three providers 
 (CESNET, BIFI, UKIM) and hosted approx. 25 student per event. Before each event
