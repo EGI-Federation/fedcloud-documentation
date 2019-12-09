@@ -30,7 +30,6 @@ Main user features
 Quick start
 -----------
 
-
 #. Log into the `VMOps dashboard <https://dashboard.appdb.egi.eu/vmops>`_ using
    EGI Check-in.
 
