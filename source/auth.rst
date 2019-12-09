@@ -202,7 +202,7 @@ Legacy x.509 AAI
 
 .. warning::
 
-   OpenID Connect is the preferred federated identity tehcnoloy on EGI Cloud.
+   OpenID Connect is the preferred federated identity technology on EGI Cloud.
    Use of X.509 certificates should be limited to legacy applications.
 
 `VOMS <https://italiangrid.github.io/voms/index.html>`_ uses X.509 proxies
