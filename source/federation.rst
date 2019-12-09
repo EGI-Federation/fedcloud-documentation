@@ -394,7 +394,7 @@ Cloud. All the components are continuously maintained to:
 
 * Improve their programmability, providing complete APIs specification in
   adequate format for facilitating the generation clients (e.g. following the
-  OpenAPI initiative) and Swagger. 
+  OpenAPI initiative and Swagger).
 
 * Lower the barriers to integrate and operate resource centres in the
   federation by a) minimizing the number of components used; b) contributing
