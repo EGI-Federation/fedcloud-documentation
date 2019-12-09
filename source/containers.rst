@@ -30,7 +30,7 @@ You can start that image as any other VA available from AppDB:
 
 #. Use a ssh-key when, so you can log into the VM once it's instantiated.
 
-#. Once up, just ssh and start using docker as usual.
+#. Once up, just ssh in the VM and start using docker as usual.
 
 Using docker from inside the VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
