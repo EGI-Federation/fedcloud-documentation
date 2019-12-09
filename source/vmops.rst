@@ -32,7 +32,7 @@ Quick start
 
 
 #. Log into the `VMOps dashboard <https://dashboard.appdb.egi.eu/vmops>`_ using
-   your EGI Check-in credentials.
+   EGI Check-in.
 
 #. Click on "Create a new VM Topology" to start the topology builder, this will
    guide you through a set of steps:
