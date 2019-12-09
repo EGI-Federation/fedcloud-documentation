@@ -61,7 +61,7 @@ Authentication
 --------------
 
 Check the documentation at :ref:`oidc-auth-using-check-in` on how to get the
-right crendentials for accessing the providers.
+right credentials for accessing the providers.
 
 OpenStack token for other clients
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,7 +229,7 @@ Terraform
 
 `Terraform <https://terraform.io>`_ supports EGI Cloud OpenStack providers by
 using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password informaton:
+provider as usual in Terraform, but do not include user/password information:
 
 .. code-block:: terraform
 
@@ -336,7 +336,7 @@ libcloud
 
 `Apache libcloud <https://libcloud.apache.org/index.html>`_ support OpenStack
 and EGI authentication mechanisms by setting the ``ex_force_auth_version`` to
-``3.x_oidc_access_token`` or ``2.0_voms`` respectivelt. Check the `libcloud
+``3.x_oidc_access_token`` or ``2.0_voms`` respectively. Check the `libcloud
 docs on connecting to OpenStack <https://libcloud.readthedocs.io/en/latest/compute/drivers/openstack.html#connecting-to-the-openstack-installation>`_
 for details. See below two code samples for using them
 

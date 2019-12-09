@@ -65,7 +65,7 @@ collects this information in a central service for discovery.
 
 Users can instantiate VMs on the providers from a set of Virtual Machine Images
 available on a central catalogue implemented in AppDB's Cloud Marketplace.
-Virtual Machine Images are synchronised to the providers peridically using the
+Virtual Machine Images are synchronised to the providers periodically using the
 HEPiX image lists format.
 
 Usage of resources is gathered centrally using EGI Accounting repository and
@@ -131,8 +131,8 @@ via specific integration modules for VOMS authentication.
 
 There are two implementations for the support of VOMS proxies:
 
-* `OpenNebula Perun integration <https://github.com/EGI-FCTF/fctf-perun>`_ 
-  synchronises users from Perun to the local OpenNebula installation.
+* `KeyStorm <https://github.com/the-rocci-project/keystorm>`_ provides
+  federated authentication for OpenNebula/rOCCI.
 
 * `Keystone-VOMS <https://github.com/IFCA/Keystone-VOMS>`_ is an OpenStack
   Keystone plugin to enable VOMS authentication. It allows users to get
@@ -152,7 +152,7 @@ Configuration DataBase
 
 EGI’s central configuration database (`GOCDB <https://goc.egi.eu>`_) is used to
 catalogue the static information of the production infrastructure topology.
-To allow Resource Providers to expose IaaS federation endpotins, the following
+To allow Resource Providers to expose IaaS federation endpoints, the following
 service types are avialable:
 
 * ``org.openstack.nova``,
@@ -166,7 +166,7 @@ integration with EGI..
 
 The `Cloud-info-provider <https://github.com/EGI-Foundation/cloud-info-provider>`_
 extracts information from the resource centres using their native APIs and
-formats it following Glue, and OGC recommeded standard. This information is
+formats it following Glue, and OGC recommended standard. This information is
 pushed to the Argo Messaging System and consumed by AppDB to provide a central
 information discovery service that aggregates several other sources of information
 of the infrastructure on a single endpoint.
@@ -186,7 +186,7 @@ instantiation when used.
 
 AppDB includes a Virtual Appliance Marketplace supporting Virtual
 Appliances (VAs), which are clean-and mean virtual machine images designed to
-run on a virtualization platform, that provide a software solution out-of-the-box,
+run on a virtualisation platform, that provide a software solution out-of-the-box,
 ready to be used with minimal or no set-up within the IaaS providers. 
 
 AppDB allows representatives of research communities (VOs) to generate a 
@@ -353,7 +353,7 @@ Accounting Probes
 
 Implementation of the extactor probes for accounting are listed below:
 
-* OpenNebula: https://github.com/EGI-FCTF/oneacct_export
+* OpenNebula: https://github.com/the-oneacct-export-project/oneacct-export
 
 * OpenStack: https://github.com/IFCA/caso
 

@@ -5,7 +5,7 @@ Introduction
 
 EGI Cloud Compute gives you the ability to deploy and scale virtual machines
 on-demand. It offers computational resources in a secure and isolated
-environment contolled via APIs without the overhead of managing physical
+environment controlled via APIs without the overhead of managing physical
 servers.
 
 Cloud Compute service is provided through a federation of IaaS cloud sites that

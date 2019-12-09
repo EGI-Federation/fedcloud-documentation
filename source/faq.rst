@@ -17,7 +17,7 @@ How can I get an OAuth2.0 token?
 
 Authentication via CLI or API requires a valid Check-in token. The
 FedCloud Check-in client allows you to get one as needed. Check the
-authentication guide for more information.
+:doc:`auth` guide for more information.
 
 How can I get the list of the EGI Cloud providers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,7 +66,7 @@ How can I assign a DNS name to my VM?
 If you need a domain name for your VMs, we offer a Dynamic DNS service that
 allows any EGI user to create names for VMs under the `fedcloud.eu` domain.
 
-Just go to `EGI Cloud nsupdate <https://nsupdate.fedcloud.eu>`_ and logint with
+Just go to `EGI Cloud nsupdate <https://nsupdate.fedcloud.eu>`_ and login with
 your Check-in account. Once in, you can click on "Add host" to register a new
 hostname in an available domain.
 
@@ -166,7 +166,8 @@ The disk on my VM is full, how can I get more space?
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM.
+device and attaching it to the VM. Check the :doc:`storage` guide for more
+information.
 
 
 How can I keep my data after the VM is stopped?

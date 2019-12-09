@@ -27,8 +27,8 @@ entitled to do so (specially do not delete them).
 
 Some users roles have special consideration in VOs:
 
-* Users with VO Manager, VO Deputy or VO Expert Role have extra pivileges in
-  the AppDB for managing the Virtual Appliances to be avaialable at every
+* Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
+  the AppDB for managing the Virtual Appliances to be available at every
   provider. Check the :doc:`vmi` for more information.
 
 
@@ -42,7 +42,7 @@ new user.
 
 .. warning::
 
-  * After the 6-month long membership in the fedcloud.egi.eu VO, you will need
+  * After the 6-month long membership in the vo.access.egi.eu VO, you will need
     to move to a production VO, or establish a new VO.
 
   * The resources are not guaranteed and may be removed without notice by
@@ -50,7 +50,6 @@ new user.
 
 For joining this VO, just place an order in the `EGI Marketplace <https://marketplace.egi.eu/31-cloud-compute>`_
 and once approved you will be able to interact with the infrastructure.
-and we will invite providers from the infrastructure to support your needs.
 
 Other VOs
 ^^^^^^^^^
@@ -100,7 +99,7 @@ The sections below detail how to achieve this as a EGI Cloud user.
 Check-in Access tokens
 ^^^^^^^^^^^^^^^^^^^^^^
 
- Access tokens can be obtained via several mechanisms, usually involving the use of
+Access tokens can be obtained via several mechanisms, usually involving the use of
 a web server and a browser. Command line clients/APIs without access to a
 browser or interactive prompt for user authentication can use refresh tokens. A
 refresh token is a special token that is used to generate additional access
@@ -129,8 +128,8 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can use the ``egicli`` to simplify the discovery of porjects. First, define
-these variables in the envrionment:
+You can use the ``egicli`` to simplify the discovery of projects. First, define
+these variables in the environment:
 
 * ``CHECKIN_CLIENT_ID``: Your Check-in client id (get it from
   `FedCloud Check-in client`_)
@@ -194,7 +193,7 @@ Technical details
    You can safely ignore this section. It details the API call used to
    refresh tokens and use them for authentication at the providers.
 
-Getting access tokens from refresh tokens uses OAuth2.0 token refesh:
+Getting access tokens from refresh tokens uses OAuth2.0 token refresh:
 
 Legacy x.509 AAI
 ----------------

@@ -50,7 +50,7 @@ in the following table.
 +--------------------+----------------------------------------+--------------+----------------------+---------------------------------+
 |                    | Access                                 | Sharing      | Accounting           | Usage                           |
 +====================+========================================+==============+======================+=================================+
-| **Block Storage**  | only from within a VM only at the same | Not possible | for the entire block | POSIX access, use as local disk |
+| **Block Storage**  | only from within a VM only at the same | Not possible | for the entire block | POSIX access, use as local disk |
 |                    | site the VM is located                 |              |                      |                                 |
 +--------------------+----------------------------------------+--------------+----------------------+---------------------------------+
 | **Object Storage** | from any device connected to the       | Possible     | only for the data    | via HTTP requests to server     |
@@ -81,8 +81,8 @@ listed below:
 +--------------------------------------------+--------------------------------------+
 | Command                                    | function                             |
 +============================================+======================================+
-| ``volume create --size <size> <name>``     | create a volume of size ``<size>``   |
-|                                            | GBs and name ``<name>``              |
+| ``volume create --size <size> <name>``     | create a volume of size ``<size>``   |
+|                                            | GBs and name ``<name>``              |
 +--------------------------------------------+--------------------------------------+
 | ``volume list``                            | list available volumes               |
 +--------------------------------------------+--------------------------------------+

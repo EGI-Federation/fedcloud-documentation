@@ -61,7 +61,7 @@ are:
   image; or
 
 *  dump an existing disk from a running VM or physical server and modify it,
-   if needed, to run on a virtualization platform.
+   if needed, to run on a virtualisation platform.
 
 In this guide we will focus on the first option, because it tends to produce
 cleaner images and reduces the risks of hardware conflicts. Snapshotting may
@@ -88,7 +88,7 @@ Disadvantages:
 
 * If you are using special drivers or you are not packaging correctly the disk,
   your custom VM image may not run (or run slowly) on different cloud providers
-  based on different virtualization technologies.
+  based on different virtualisation technologies.
 
 * VM images images on public clouds are sometimes public, thus be aware of
   installing proprietary software on custom images, since other users may be
@@ -119,8 +119,8 @@ guidelines:
   empty space can be allocated on runtime easily.
 
 * **DO** use compressed image formats, like qcow2 or vmdk (used in OVA) to
-  minimize the size of the image. Prefered format for images in EGI is
-  OVA as it's standarised.
+  minimize the size of the image. Preferred format for images in EGI is
+  OVA as it's standardised.
 
 * **DO** fill with ``0`` the empty disk space of your image so when compressed
   it can be significantly reduced, e.g. using:
@@ -165,7 +165,7 @@ Security
 
 * Disable all services unless necessary for the intended tasks.
 
-* Make sure the firewall config (iptables for Linux, also on IPv6) is
+* Make sure the firewall configuration (iptables for Linux, also on IPv6) is
   minimally open.
 
 * Put no shared credentials (passwords) in any image.
