@@ -12,7 +12,7 @@ You can run containers on EGI Cloud by:
 
 * running a container orchestration platform that manages the applications on
   top of a set of nodes (Kubernetes, Docker Swarm and Mesos are examples of
-  such orchestration platforms.
+  such orchestration platforms).
 
 EGI Docker VA
 -------------
