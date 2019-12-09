@@ -53,7 +53,6 @@ For joining this VO, just place an order in the `EGI Marketplace <https://market
 and once approved you will be able to interact with the infrastructure.
 and we will invite providers from the infrastructure to support your needs.
 
-
 Other VOs
 ^^^^^^^^^
 
