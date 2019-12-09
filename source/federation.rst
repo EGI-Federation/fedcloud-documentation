@@ -73,7 +73,7 @@ available for visualisation at  `EGI Accounting portal <https://accounting.egi.e
 
 Those endpoints published in the EGI Configuration Database are monitored via
 `ARGO <https://argoeu.github.io/>`_. The set of probes check the availability
-of the providers and their correct functionality. 
+of the providers and their correct functionality.
 
 Users and Community platforms built on top of the EGI IaaS can interact with
 the cloud providers at three different layers:
@@ -84,9 +84,9 @@ the cloud providers at three different layers:
 * Using IaaS Federated Access Tools that allow managing the complexity of
   dealing with different providers in a uniform way. These tools include:
 
-  * IaaS provisioning systems that allow to define infrastructure as code and 
+  * IaaS provisioning systems that allow to define infrastructure as code and
     manage and combine resources from different providers, thus enabling the
-    portability of application deployments between them (e.g. IM or Terraform); 
+    portability of application deployments between them (e.g. IM or Terraform);
     and
 
   * cloud brokers, that provide matchmaking for workloads to available
@@ -145,7 +145,7 @@ Information discovery
 
 The information system provides a real-time view about the actual capabilities
 of federation participants. The information system can be used by both human
-users and online services. 
+users and online services.
 
 Configuration DataBase
 ::::::::::::::::::::::
@@ -162,7 +162,7 @@ service types are avialable:
 * ``eu.egi.cloud.vm-metadata.marketplace``.
 
 All providers **must** enter cloud service endpoints to GOCDB to enable
-integration with EGI.. 
+integration with EGI..
 
 The `Cloud-info-provider <https://github.com/EGI-Foundation/cloud-info-provider>`_
 extracts information from the resource centres using their native APIs and
@@ -187,9 +187,9 @@ instantiation when used.
 AppDB includes a Virtual Appliance Marketplace supporting Virtual
 Appliances (VAs), which are clean-and mean virtual machine images designed to
 run on a virtualisation platform, that provide a software solution out-of-the-box,
-ready to be used with minimal or no set-up within the IaaS providers. 
+ready to be used with minimal or no set-up within the IaaS providers.
 
-AppDB allows representatives of research communities (VOs) to generate a 
+AppDB allows representatives of research communities (VOs) to generate a
 VM image list via GUI that resource centres subscribe to. The subscription
 enables the periodic download, conversion and storage of those images in the local
 IaaS image repository. `cloudkeeper <https://github.com/the-cloudkeeper-project/cloudkeeper>`_
@@ -198,29 +198,29 @@ provides this automated synchronisation between AppDB and OpenStack/OpenNebula.
 Accounting
 ^^^^^^^^^^
 
-Federated Accounting provides an integrated view about resource/service usage:  
-it pulls together usage information from the federated sites and services,      
-integrates the data and presents them in such a way that both individual users  
-as well as whole communities can monitor their own resource/service usage        
-across the whole federation.                                                    
-                                                                                
-Cloud Usage Record                                                              
-::::::::::::::::::                                                              
-                                                                                
-The federated cloud task force has agreed on a Cloud Usage Record, which        
+Federated Accounting provides an integrated view about resource/service usage:
+it pulls together usage information from the federated sites and services,
+integrates the data and presents them in such a way that both individual users
+as well as whole communities can monitor their own resource/service usage
+across the whole federation.
+
+Cloud Usage Record
+::::::::::::::::::
+
+The federated cloud task force has agreed on a Cloud Usage Record, which
 inherits from the `OGF Usage Record <https://www.ogf.org/documents/GFD.98.pdf>`_.
-This record defines the data that resource providers must send to EGI’s central        
-Accounting repository.                                                          
+This record defines the data that resource providers must send to EGI’s central
+Accounting repository.
 
 .. TODO: get the doc
-                                                                                
-Version 0.4 of the Cloud Accounting Usage Record was agreed at the FedCloud      
+
+Version 0.4 of the Cloud Accounting Usage Record was agreed at the FedCloud
 Face to Face in Amsterdam in January 2015. A summary table of the format is
 shown below:
 
 +---------------------------+------------------+------+-------------------------------------------------+
 | Cloud Usage Record        |   Type           | Null | Definition                                      |
-| Property                  |                  |      |                                                 | 
+| Property                  |                  |      |                                                 |
 +===========================+==================+======+=================================================+
 | VMUUID                    | ``varchar(255)`` | No   | Virtual Machine's Universally Unique Identifier |
 |                           |                  |      | concatenation of CurrentTime, SiteName and      |
@@ -230,7 +230,7 @@ shown below:
 |                           |                  |      | types and a cloud-only site is allowed.         |
 +---------------------------+------------------+------+-------------------------------------------------+
 | CloudComputeService (NEW) | ``varchar(255)`` |      | Name identifying cloud resource within the site.|
-|                           |                  |      | Allows multiple cloud resources within a site.  |  
+|                           |                  |      | Allows multiple cloud resources within a site.  |
 |                           |                  |      | i.e. a level of granularity.                    |
 +---------------------------+------------------+------+-------------------------------------------------+
 | MachineName               | ``varchar(255)`` | No   | VM Id - the site name for the VM                |
@@ -295,13 +295,13 @@ shown below:
 |                           |                  |      | OpenNebula; OpenStack; Synnefo; etc.            |
 +---------------------------+------------------+------+-------------------------------------------------+
 
-Public IP Usage Record 
+Public IP Usage Record
 ::::::::::::::::::::::
 
 The fedcloud task force has agreed on an IP Usage Record. The format uses many
 of the same fields as the Cloud Usage Record. The Usage Record should be a
 "snapshot" of the number of IPs currently assigned to a user. A table
-defining v0.2 of the format is shown below: 
+defining v0.2 of the format is shown below:
 
 +---------------------------+------------------+------+---------------------------------+---------------------------------------+
 | Cloud Usage Record        |   Type           | Null | Definition                      | Notes                                 |
@@ -336,7 +336,7 @@ defining v0.2 of the format is shown below:
 
 A JSON schema defining a valid Public IP Usage message can be found at: https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py
 
-APEL and accounting portal 
+APEL and accounting portal
 ::::::::::::::::::::::::::
 
 Once generated, records are delivered to the central accounting repository

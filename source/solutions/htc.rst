@@ -8,11 +8,11 @@ Get EC3 CLI
 -----------
 
 EC3 has an official Docker container image available in Docker Hub that can be
-used instead of installing the CLI. You can download it with 
+used instead of installing the CLI. You can download it with
 
 
 .. code-block:: console
-   
+
    docker pull grycap/ec3
 
 That will allow you to exploit all the potential of EC3 from your computer.
@@ -48,10 +48,10 @@ List virtual clusters
 To list the available running clusters, use the command:
 
 .. code-block:: console
-   
+
    docker run -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 list
-   
-       name        state           IP           nodes 
+
+       name        state           IP           nodes
    -------------------------------------------------------
     cluster      configured    212.189.145.XXX    0
 
@@ -62,16 +62,16 @@ To launch a cluster, you can use the recipes that you have locally by mounting
 the folder as a volume, or create your dedicated ones. Also, it is
 recommendable to maintain the data of active clusters locally, by mounting a
 volume. In the next example, we are going to deploy a new Torque/Maui cluster
-on one cloud provider of the EGI Federation (INFN-CATANIA-STACK). 
+on one cloud provider of the EGI Federation (INFN-CATANIA-STACK).
 
-The cluster will be configured with the following templates: 
+The cluster will be configured with the following templates:
 
 .. code-block::
 
-   #torque (default template), 
-   #configure_nfs (patched template), 
-   #ubuntu-1604-occi-INFN-CATANIA-STACK (user's template), 
-   #cluster_configure (user's template) 
+   #torque (default template),
+   #configure_nfs (patched template),
+   #ubuntu-1604-occi-INFN-CATANIA-STACK (user's template),
+   #cluster_configure (user's template)
 
 User’s templates are stored in ``$HOME/ec3/templates``
 
@@ -81,13 +81,13 @@ User’s templates are stored in ``$HOME/ec3/templates``
               -v /home/centos/ec3/templates:/etc/ec3/templates \
               -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch unicam_cluster \
               torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure configure_nfs \
-              -a /tmp/auth_INFN-CATANIA-STACK.dat 
+              -a /tmp/auth_INFN-CATANIA-STACK.dat
 
    Creating infrastructure
    Infrastructure successfully created with ID: 529c62ec-343e-11e9-8b1d-300000000002
    Front-end state: launching
    Front-end state: pending
-   Front-end state: running 
+   Front-end state: running
    IP: 212.189.145.XXX
    Front-end configured with IP 212.189.145.XXX
    Transferring infrastructure
@@ -106,7 +106,7 @@ Example of OCCI provider with X.509 authentication:
 
 .. code-block:: console
 
-   $ cat /tmp/auth_INFN-CATANIA-STACK.dat 
+   $ cat /tmp/auth_INFN-CATANIA-STACK.dat
    id = occi; type = OCCI; proxy = file(/tmp/proxy.pem); host = http://stack-server.ct.infn.it:8787/occi1.1
 
 Templates
@@ -127,11 +127,11 @@ This section contains the templates used to configure the cluster.
           - { name: user02, password: <PASSWORD> }
    [..]
        tasks:
-       - user: 
-           name: "{{ item.name }}" 
+       - user:
+           name: "{{ item.name }}"
            password: "{{ item.password }}"
-           shell: /bin/bash 
-           append: yes 
+           shell: /bin/bash
+           append: yes
            state: present
          with_items: "{{ USERS }}"
        - name: Install missing dependences in Debian system
@@ -144,13 +144,13 @@ This section contains the templates used to configure the cluster.
           - vim
          become: yes
          when: ansible_os_family == "Debian"
-       - name: SSH without password    
+       - name: SSH without password
          include_role:
            name: grycap.ssh
          vars:
            ssh_type_of_node: front
            ssh_user: "{{ user.name }}"
-         loop: '{{ USERS }}'  
+         loop: '{{ USERS }}'
          loop_control:
            loop_var: user
        - name: Updating the /etc/hosts.allow file
@@ -169,16 +169,16 @@ This section contains the templates used to configure the cluster.
    @begin
    ---
      - vars:
-        - USERS: 
+        - USERS:
           - { name: user01, password: <PASSWORD> }
           - { name: user02, password: <PASSWORD> }
-   [..]  
+   [..]
        tasks:
        - user:
            name: "{{ item.name }}"
            password: "{{ item.password }}"
-           shell: /bin/bash 
-           append: yes 
+           shell: /bin/bash
+           append: yes
            state: present
          with_items: "{{ USERS }}"
        - name: Install missing dependences in Debian system
@@ -212,11 +212,11 @@ This section contains the templates used to configure the cluster.
            line: 'ALL: ALL'
          become: yes
    @end
-   ) 
+   )
 
 ``ubuntu-1604-occi-INFN-CATANIA-STACK.radl``:
 
-.. code-block:: 
+.. code-block::
 
    description ubuntu-1604-occi-INFN-CATANIA-STACK (
        kind = 'images' and
@@ -250,12 +250,12 @@ This section contains the templates used to configure the cluster.
 .. code-block::
 
    # http://www.server-world.info/en/note?os=CentOS_6&p=nfs&f=1
-   # http://www.server-world.info/en/note?os=CentOS_7&p=nfs 
+   # http://www.server-world.info/en/note?os=CentOS_7&p=nfs
    description nfs (
        kind = 'component' and
        short = 'Tool to configure shared directories inside a network.' And
-       content = 'Network File System (NFS) client allows you to access shared directories from Linux client. 
-       This recipe installs nfs from the repository and shares the /home/ubuntu directory with all the nodes 
+       content = 'Network File System (NFS) client allows you to access shared directories from Linux client.
+       This recipe installs nfs from the repository and shares the /home/ubuntu directory with all the nodes
        that compose the cluster.
    Webpage: http://www.grycap.upv.es/clues/'
    )
@@ -273,7 +273,7 @@ This section contains the templates used to configure the cluster.
        outports contains '892/tcp' and
        outports contains '892/udp' and
        outports contains '32803/tcp' and
-       outports contains '32769/udp' 
+       outports contains '32769/udp'
    )
    system front (
        ec3_templates contains 'nfs' and
@@ -304,7 +304,7 @@ To access the cluster, use the command:
 .. code-block:: console
 
    docker run -ti -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh unicam_cluster
-   
+
    Warning: Permanently added '212.189.145.140' (ECDSA) to the list of known hosts.
    Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-164-generic x86_64)
     * Documentation:  https://help.ubuntu.com/
@@ -325,23 +325,23 @@ Change settings in ``/etc/ssh/sshd_config``
 
 and restart the ssh daemon:
 
-.. code-block:: console 
+.. code-block:: console
 
    sudo service ssh restart
 
 Configure the number of processors of the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console 
+.. code-block:: console
 
    $ cat /var/spool/torque/server_priv/nodes
    wn1 np=XX
    wn2 np=XX
-   [...] 
+   [...]
 
 To obtain the number of CPU/cores (np) in Linux, use the command:
 
-.. code-block:: console 
+.. code-block:: console
 
    $ lscpu | grep -i CPU
    CPU op-mode(s):         32-bit, 64-bit
@@ -358,7 +358,7 @@ Test the cluster
 
 Create a simple test script:
 
-.. code-block:: console 
+.. code-block:: console
 
    $ cat test.sh
    #!/bin/bash
@@ -375,7 +375,7 @@ Submit to the batch queue:
 
    $ qsub -l nodes=2 test.sh
 
-Destroy the cluster 
+Destroy the cluster
 -------------------
 
 To destroy the running cluster, use the command:

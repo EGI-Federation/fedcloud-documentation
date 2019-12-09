@@ -6,15 +6,15 @@ high-throughput data such as NGS and microarrays and provided as part of EGI's A
 service.
 
 The software contains over 400 analysis tools and a large collection of reference
-genomes. 
+genomes.
 
 Users can save and share automatic analysis workflows, and visualize data interactively
 using for example the built-in genome browser.
 
-EGI Chipster 
+EGI Chipster
 ------------
 
-The Chipster testbed configured at `CESGA <https://www.cesga.es/>`_ offers: 
+The Chipster testbed configured at `CESGA <https://www.cesga.es/>`_ offers:
 
 * 8 vCPU cores,
 * 32GB of RAM,
@@ -41,21 +41,21 @@ and:
 
   * To activate the new account, click on the *"Execute"* button to trigger the
     creation/update of the temporary account in the Chipster testbed. This operation
-    may takes a few minutes. 
+    may takes a few minutes.
   * You can monitor the account creation by clicking in the *"Show"* button.
 
-* Once your account is available, the web interface will show a link to access the 
-  `Chipster server <http://chipster.aod.fedcloud.eu:8081/chipster.jnlp>`_ with the new credentials.  
+* Once your account is available, the web interface will show a link to access the
+  `Chipster server <http://chipster.aod.fedcloud.eu:8081/chipster.jnlp>`_ with the new credentials.
 
 .. image:: img/chipster.png
    :width: 900px
    :alt: Chipster in Science Software on Demand
 
-.. note:: 
+.. note::
   **Acknowledgement**
 
   Please provide appropriate acknowledgement of the use in scientific publications. You
-  can use this The following acknowledgement text this purpose: 
+  can use this The following acknowledgement text this purpose:
 
   *This work used the EGI Applications on Demand service, which is co-funded by the
   EOSC-hub project (grant number 777536)*

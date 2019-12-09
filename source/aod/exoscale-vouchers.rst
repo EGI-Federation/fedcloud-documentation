@@ -1,4 +1,4 @@
-Exoscale Vouchers for AoD 
+Exoscale Vouchers for AoD
 =========================
 
 In this section we describe how users can easily discover the `EGI
@@ -20,9 +20,9 @@ The `EOSC Portal Marketplace <https://marketplace.eosc-portal.eu/>`_ is a
 single entry point where users can navigate the EOSC service catalogue,
 discover a service of interest, get information about it, and place an order
 in a few clicks by specifying the service requested along with the quantity,
-quality and duration.   
+quality and duration.
 
-All the available services of the EOSC Marketplace are grouped in 8 main 
+All the available services of the EOSC Marketplace are grouped in 8 main
 categories and no authentication is required to browse and discover the
 list of services published in the marketplace.
 

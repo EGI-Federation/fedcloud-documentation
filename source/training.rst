@@ -15,7 +15,7 @@ hours or days, depending on the length of the training event - allow them to
 interact with the services.
 
 The infrastructure currently includes enough capacity to scale up to class-room
-size audiences, approximately up to 100 participants.  
+size audiences, approximately up to 100 participants.
 
 `An introductory slideset and poster of the infrastructure <https://indico.egi.eu/indico/contributionDisplay.py?contribId=122&confId=2544>`_
 from EGI Community Forum 2015, Bari. (Outdated in some parts).
@@ -42,18 +42,18 @@ The training infrastructure is suitable for two types of courses:
   knowing where those are deployed and running. Depending on how computationally
   or data intensive the exercises are, multiple students may share a single
   software deployment instance, or each student can have their own. The
-  configuration can be controlled by the trainer when the setup is deployed.  
+  configuration can be controlled by the trainer when the setup is deployed.
 
 In both cases the deployment of applications/tools/services can happen in the
 form of ‘Virtual Appliances’ (VAs), and block storage - the latter
 basically behaving like a virtual USB drive that can be attached/detached to
-VMs to provide data and storage space for applications. 
+VMs to provide data and storage space for applications.
 
 The AppDB has a growing catalogue of Virtual Appliances that includes both basic
 applications (e.g.  latest version of clean Linux distribution) and more
-specialised applications (e.g. Jupyter Notebook). The list of VAs available 
+specialised applications (e.g. Jupyter Notebook). The list of VAs available
 on the training infrastructure is configurable and listed in the `training.egi.eu
-VO entry of AppDB <https://appdb.egi.eu/store/vo/training.egi.eu>`_. 
+VO entry of AppDB <https://appdb.egi.eu/store/vo/training.egi.eu>`_.
 
 The VMOps can be used as web interface for both trainers and students to deploy
 and manage VMs.
@@ -61,14 +61,14 @@ and manage VMs.
 Available resources
 -------------------
 
-The available resources are offered by a set of providers included in the 
+The available resources are offered by a set of providers included in the
 `training.egi.eu VO Operation Level Agreement (OLA) <https://documents.egi.eu/document/2768>`_.
 Check the document for the exact amount of resources and conditions of access
 for each provider.
 
 .. note::
 
-   Do you want to join as a resource provider? Please email at ``support _at_ 
+   Do you want to join as a resource provider? Please email at ``support _at_
    egi.eu``.
 
 The list of providers and VAs is also discoverable in the `training.egi.eu VO
@@ -82,7 +82,7 @@ The training infrastructure was used in July 2015 for two face-to-face
 training courses that trained programmers about the use of the EGI Cloud (the
 first operational model above). The focus of these courses was on the use of
 the rOCCI client to interact with the providers (instantiate, delete, access
-VMs). During these courses the training infrastructure included three providers 
+VMs). During these courses the training infrastructure included three providers
 (CESNET, BIFI, UKIM) and hosted approx. 25 student per event. Before each event
 the trainers prepared a basic VM that included the rOCCI client (with the
 training VO pre-configured in it), one user account for each student with a
@@ -95,7 +95,7 @@ providers.
 
 The presentations and hands-on materials from the events are available here:
 
-* `EGI Federated Cloud tutorial package (Software Carpentry Bootcamp, 17 July  
+* `EGI Federated Cloud tutorial package (Software Carpentry Bootcamp, 17 July
   2015 Feltham, London, UK) <https://documents.egi.eu/document/2551>`_.
 
 * `EGI Federated Cloud tutorial package (HPCS 2015 conference, 20-24 July 2015,
@@ -109,7 +109,7 @@ The presentations and hands-on materials from the events are available here:
 
 * `Tutorials at the EGI Community Forum (10-12 November 2015, Bari, IT)
   <https://indico.egi.eu/indico/internalPage.py?pageId=7&confId=2544>`_.
-  
+
   * Introduction to the EGI Federated Cloud – the user perspective
 
   * Dos and Don'ts for Virtual Appliance Preparation
@@ -132,7 +132,7 @@ The presentations and hands-on materials from the events are available here:
 * `EGI Federated Cloud for developers (DI4R, 28 September 2016, Krakow, PL)
   <https://www.digitalinfrastructures.eu/content/egi-federated-cloud-developers>`_.
 
-* `UberCloud - EGI webinar: Cloud for SMEs in CAE – OpenFOAM demo (20 October 
+* `UberCloud - EGI webinar: Cloud for SMEs in CAE – OpenFOAM demo (20 October
   2016) <https://www.egi.eu/blog/egi-and-ubercloud-webinar-for-smes-cae-openfoam-demo-20oct2016/>`_;
   `Webinar recording <https://www.youtube.com/watch?v=DU6LghOtrFs&feature=youtu.be>`_.
 
@@ -153,7 +153,7 @@ The presentations and hands-on materials from the events are available here:
 
 * `NGSchool 2018 <https://ngschool.eu/>`_.
 
-* `3rd Int'l Summer School on Data Science (SSDS 2018) <https://sites.google.com/site/ssdatascience2018/>`_. 
+* `3rd Int'l Summer School on Data Science (SSDS 2018) <https://sites.google.com/site/ssdatascience2018/>`_.
 
 * `Training for PhD students at the University of Genoa (04 June 2019)
   <http://dottorato.dicca.unige.it/eng/schede_corsi_2019/eScience%20new%20information%20technologies%20for%20research.pdf>`_.
@@ -161,7 +161,7 @@ The presentations and hands-on materials from the events are available here:
 * `Introduction to Jupyter and Open Science - Training (27 September 2019,
   Yervan) <http://go.egi.eu/eapec2019>`_.
 
-Booking the infrastructure 
+Booking the infrastructure
 --------------------------
 
 The infrastructure currently includes enough capacity to scale up to
