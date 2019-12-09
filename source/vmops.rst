@@ -8,7 +8,7 @@ GUI for management of Virtual Machines (VMs) on the federated infrastructure.
 
 This GUI is available for a set of `selected VOs <https://wiki.appdb.egi.eu/main:faq:which_vos_are_supported_by_the_vmops_dashboard>`_
 If your VO is not listed and you are interested in getting support, please
-contact us!
+`open a ticket <https://ggus.egi.eu>`_ or contact us at ``support _at_ egi.eu``.
 
 Main user features
 ------------------
