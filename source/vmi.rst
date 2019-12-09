@@ -3,7 +3,7 @@
 Virtual Machine Image Management
 ================================
 
-Users of the EGI Cloud, create Virtual Machines (VMs) on the providers. Those
+Users of the EGI Cloud create Virtual Machines (VMs) on the providers. Those
 VMs are started from images: templates for the root volume of the running
 instances, i.e. operating system and applications available initially on a VM.
 The AppDB collects the Virtual Machine Images available on the service as
