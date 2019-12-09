@@ -3,7 +3,7 @@
 Training infrastructure
 =======================
 
-The training infrastructure is a resource pool within the EGI Federatec Cloud
+The training infrastructure is a resource pool within the EGI Federated Cloud
 infrascture providing IaaS as well ass access services (login, application
 catalogue and application management portal) for face-to-face events, online
 training courses or self-paced learning modules.
@@ -169,4 +169,3 @@ class-room size audiences, approximately up to 100 participants.
 
 Do you want to book the infrastructure for a course? Please send a request
 through https://www.egi.eu/services/training-infrastructure/
-
