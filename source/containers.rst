@@ -28,7 +28,7 @@ You can start that image as any other VA available from AppDB:
 #. Check the identifiers of the endpotint, image and flavor you want to use
    at the provider.
 
-#. Use a ssh-key when, so you can log into the VM once it's instantiated.
+#. Use a ssh key when, so you can log into the VM once it's instantiated.
 
 #. Once up, just ssh in the VM and start using docker as usual.
 
