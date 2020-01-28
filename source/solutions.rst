@@ -9,3 +9,4 @@ of the EGI Cloud.
    :maxdepth: 1
 
    solutions/htc
+   solutions/ecas
