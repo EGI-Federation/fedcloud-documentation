@@ -264,10 +264,10 @@ Accessing the Jupyter interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To access the Jupyter interface, open the browser at
-``https://<YOUR_CLUSTER_IP>:443/jupyter`` and log in to the system using
-``ophuser`` as username and ``abcd`` as password. For security reasons we
-suggest to change the password by editing the ``jupyterhub_config.py``
-configuration file located at the ``/root`` folder.
+``https://<YOUR_CLUSTER_IP>:443/jupyter`` and log in to the system using the
+username and password specified in the ``jupyterhub_config.pyp`` configuration
+file (see the ``c.Authenticator.whitelist`` and ``c.DummyAuthenticator.password``
+lines) located at the ``/root`` folder.
 
 .. image:: img/ecas-jupyterhub.png
    :width: 800px
