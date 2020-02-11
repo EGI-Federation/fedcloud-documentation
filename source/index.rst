@@ -18,7 +18,7 @@ willing to integrate into the service, please check `EGI Federated Cloud Integra
    :caption: Contents:
 
    introduction
-   auth 
+   auth
    vmi
    vmops
    usage-openstack
@@ -28,5 +28,5 @@ willing to integrate into the service, please check `EGI Federated Cloud Integra
    aod
    solutions
    training
-   federation 
+   federation
    faq
