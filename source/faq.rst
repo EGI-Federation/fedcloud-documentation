@@ -19,6 +19,18 @@ Authentication via CLI or API requires a valid Check-in token. The
 FedCloud Check-in client allows you to get one as needed. Check the
 :doc:`auth` guide for more information.
 
+Is OCCI still supported?
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+OCCI is now deprecated as API for the EGI Cloud providers using OpenStack. If
+you still rely on OCCI for your access, please contact us for support on the 
+migration. OpenNebula sites still use OCCI as main API, but its direct use is
+not recommended as the support will be deprecated. Instead use one an Orchestrator
+like IM for interacting with those sites.
+
+Discovery
+---------
+
 How can I get the list of the EGI Cloud providers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -48,10 +60,46 @@ The ``egicli endpoint list`` command can help you to get that list:
    100IT               org.openstack.nova  https://cloud-egi.100percentit.com:5000/v3/
 
 The providers also generate dynamic information about their characteristics via
-the Argo Messaging System.
+the Argo Messaging System which is easily browsable from AppDB.
+
+
+How can I choose which site to use?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sites offer their resources to users through Virtual Organisations (VO). Before
+you can access a Federated Cloud site you need to join a Virtual Organisation
+supported by that site.  AppDB shows the supported VOs and for each VO you can
+browse the resource providers that support it.
+
+How can I get information about the available VM images?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `Application Database <https://appdb.egi.eu>`_ contains information about
+the VM images available in the EGI Cloud. Within the AppDB Cloud Marketplace,
+you can look for a VM and get all the information about which VO the VM is
+associated, the sites where the VM is available and the endpoints and identifiers
+to use it in practice. 
 
 Managing VMs
 ------------
+
+The disk on my VM is full, how can I get more space?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are several ways to increase the disk space available at the VM. The
+fastest and easiest one is to use block storage, creating a new storage disk
+device and attaching it to the VM. Check the :doc:`storage` guide for more
+information.
+
+
+How can I keep my data after the VM is stopped?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After a VM is stopped and unless backed up in a block storage volume, all data
+in the VM is destroyed and cannot be recovered. To ensure your data will be
+available after the VM is deleted, you need to use some form of persistent
+storage.
+
 
 How can I assign a public IP to my VM?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -161,19 +209,12 @@ can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
 
-The disk on my VM is full, how can I get more space?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How can I use ansible?
+^^^^^^^^^^^^^^^^^^^^^^
 
-There are several ways to increase the disk space available at the VM. The
-fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the :doc:`storage` guide for more
-information.
+Ansible relies on ssh for accessing the servers it will configure. VMs at EGI
+Cloud can be also accessed via ssh, just make sure you inject the correct
+public keys in the VMs to be able to access.
 
-
-How can I keep my data after the VM is stopped?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-After a VM is stopped and unless backed up in a block storage volume, all data
-in the VM is destroyed and cannot be recovered. To ensure your data will be
-available after the VM is deleted, you need to use some form of persistent
-storage.
+If you don't have public IPs for all the VMs to be managed, you can also use
+one as a gateway as described in the `Ansible FAQ <https://docs.ansible.com/ansible/latest/reference_appendices/faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to>`_.
