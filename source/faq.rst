@@ -62,7 +62,6 @@ The ``egicli endpoint list`` command can help you to get that list:
 The providers also generate dynamic information about their characteristics via
 the Argo Messaging System which is easily browsable from AppDB.
 
-
 How can I choose which site to use?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -91,15 +90,13 @@ fastest and easiest one is to use block storage, creating a new storage disk
 device and attaching it to the VM. Check the :doc:`storage` guide for more
 information.
 
-
 How can I keep my data after the VM is stopped?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After a VM is stopped and unless backed up in a block storage volume, all data
+After a VM has been stopped and unless backed up in a block storage volume, all data
 in the VM is destroyed and cannot be recovered. To ensure your data will be
 available after the VM is deleted, you need to use some form of persistent
 storage.
-
 
 How can I assign a public IP to my VM?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
