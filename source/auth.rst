@@ -6,6 +6,8 @@
 Authentication
 ==============
 
+.. _authorisation:
+
 Authorisation
 -------------
 
@@ -67,6 +69,8 @@ the respective CA page at the TCS participants list.
 If eScience Personal certificate is not available in your country, then obtain
 a certificate from a regular IGTF CA (this may require a personal visit at the
 Certification Authority).
+
+.. _oidc-auth-using-check-in:
 
 Authentication
 --------------

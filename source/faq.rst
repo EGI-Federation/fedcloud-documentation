@@ -23,10 +23,10 @@ Is OCCI still supported?
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 OCCI is now deprecated as API for the EGI Cloud providers using OpenStack. If
-you still rely on OCCI for your access, please contact us for support on the 
-migration. OpenNebula sites still use OCCI as main API, but its direct use is
-not recommended as the support will be deprecated. Instead use one an Orchestrator
-like IM for interacting with those sites.
+you still rely on OCCI for your access, please contact us at ``support _at_ egi.eu``
+for support on the migration. OpenNebula sites still use OCCI as main API, but
+its direct use is not recommended as the support will be deprecated. Instead
+use an Orchestrator like IM for interacting with those sites.
 
 Discovery
 ---------
@@ -65,10 +65,10 @@ the Argo Messaging System which is easily browsable from AppDB.
 How can I choose which site to use?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sites offer their resources to users through Virtual Organisations (VO). Before
-you can access a Federated Cloud site you need to join a Virtual Organisation
-supported by that site.  AppDB shows the supported VOs and for each VO you can
-browse the resource providers that support it.
+Sites offer their resources to users through Virtual Organisations (VO). First,
+you need to join a Virtual Organisation that matches your research interests,
+see :ref:`authorisation` section on how VOs work. AppDB shows the supported VOs
+and for each VO you can browse the resource providers that support it.
 
 How can I get information about the available VM images?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
