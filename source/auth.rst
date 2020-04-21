@@ -4,7 +4,7 @@
 .. _`AppDB`: https://appdb.egi.eu
 
 How to get access
-=============
+=================
 
 .. _authorisation:
 
