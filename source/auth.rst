@@ -3,8 +3,8 @@
 .. _`FedCloud Check-in client`: https://aai.egi.eu/fedcloud
 .. _`AppDB`: https://appdb.egi.eu
 
-Authentication
-==============
+Gettin Access
+=============
 
 .. _authorisation:
 
