@@ -24,7 +24,7 @@ To list the available templates, use the command:
 
 .. code-block:: console
 
-   docker run -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 templates
+   docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 templates
 
    name                    kind                                         summary
    ---------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ To list the available running clusters, use the command:
 
 .. code-block:: console
 
-   docker run -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 list
+   docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 list
 
        name        state           IP           nodes
    -------------------------------------------------------
@@ -79,7 +79,7 @@ User’s templates are stored in ``$HOME/ec3/templates``
 
    docker run -v /home/centos/:/tmp/ \
               -v /home/centos/ec3/templates:/root/.ec3/templates \
-              -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch unicam_cluster \
+              -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch unicam_cluster \
               torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure configure_nfs \
               -a /tmp/auth_INFN-CATANIA-STACK.dat
 
@@ -102,12 +102,12 @@ composed by pairs of key and value separated by semicolon, and refers to a
 single credential. The key and value should be separated by ``=``, that is
 **an equal sign preceded and followed by one white space at least**.
 
-Example of OCCI provider with X.509 authentication:
+Example of cloud provider with OIDC-based authentication:
 
 .. code-block:: console
 
    $ cat /tmp/auth_INFN-CATANIA-STACK.dat
-   id = occi; type = OCCI; proxy = file(/tmp/proxy.pem); host = http://stack-server.ct.infn.it:8787/occi1.1
+   id = PROVIDER_ID; type = OpenStack; host = KEYSTONE_ENDPOINT; username = egi.eu; tenant = openid; domain = DOMAIN_NAME; auth_version = 3.x_oidc_access_token; password = OIDC_ACCESS_TOKEN
 
 Templates
 ^^^^^^^^^
@@ -303,7 +303,7 @@ To access the cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh unicam_cluster
+   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh unicam_cluster
 
    Warning: Permanently added '212.189.145.140' (ECDSA) to the list of known hosts.
    Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-164-generic x86_64)
@@ -382,7 +382,7 @@ To destroy the running cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /tmp/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy unicam_cluster
+   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy unicam_cluster
    WARNING: you are going to delete the infrastructure (including frontend and nodes).
    Continue [y/N]? y
    Success deleting the cluster!
