@@ -17,8 +17,8 @@ used instead of installing the CLI. You can download it with
 
 That will allow you to exploit all the potential of EC3 from your computer.
 
-List available templates
-------------------------
+List available EC3 templates
+----------------------------
 
 To list the available templates, use the command:
 
@@ -42,8 +42,8 @@ To list the available templates, use the command:
    ubuntu-azure        images      Ubuntu 12.04 amd64 on Azure.
    ubuntu-ec2          images      Ubuntu 14.04 amd64 on EC2.
 
-List virtual clusters
----------------------
+List EC3 clusters
+------------------
 
 To list the available running clusters, use the command:
 
@@ -54,9 +54,37 @@ To list the available running clusters, use the command:
        name        state           IP           nodes
    -------------------------------------------------------
     cluster      configured    212.189.145.XXX    0
+    
 
-Create a cluster
-----------------
+Authorization file
+^^^^^^^^^^^^^^^^^^
+
+The authorization file stores in plain text the credentials to access the cloud
+providers, the IM service and the VMRC service. Each line of the file is
+composed by pairs of key and value separated by semicolon, and refers to a
+single credential. The key and value should be separated by ``=``, that is
+**an equal sign preceded and followed by one white space at least**.
+
+Example of cloud provider with OIDC-based authentication:
+
+.. code-block:: console
+
+   $ cat /tmp/auth.dat
+   id = PROVIDER_ID; type = OpenStack; host = KEYSTONE_ENDPOINT; username = egi.eu; tenant = openid; domain = DOMAIN_NAME; auth_version = 3.x_oidc_access_token; password = OIDC_ACCESS_TOKEN
+   
+   Where:
+   * `id` is the id of the cloud provider
+   * `host` is the public IP address of the cloud provider Keystone service 
+   * `domain` is the project tenant in the cloud provider
+   * `password` is the access token
+
+Get an access token
+-------------------
+Login the EGI AAI Check-In [EGI AAI Check-In](https://aai.egi.eu/fedcloud) service. 
+Copy and paste in your terminal the CURL command to generate a valid access token valid for 1h.
+
+Create an elastic EC3 cluster
+-----------------------------
 
 To launch a cluster, you can use the recipes that you have locally by mounting
 the folder as a volume, or create your dedicated ones. Also, it is
@@ -79,9 +107,9 @@ User’s templates are stored in ``$HOME/ec3/templates``
 
    docker run -v /home/centos/:/tmp/ \
               -v /home/centos/ec3/templates:/root/.ec3/templates \
-              -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch unicam_cluster \
-              torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure configure_nfs \
-              -a /tmp/auth_INFN-CATANIA-STACK.dat
+              -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch cluster \
+              torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure refreshtoken configure_nfs \
+              -a /tmp/auth.dat
 
    Creating infrastructure
    Infrastructure successfully created with ID: 529c62ec-343e-11e9-8b1d-300000000002
@@ -93,22 +121,6 @@ User’s templates are stored in ``$HOME/ec3/templates``
    Transferring infrastructure
    Front-end ready!
 
-Authorization file
-^^^^^^^^^^^^^^^^^^
-
-The authorization file stores in plain text the credentials to access the cloud
-providers, the IM service and the VMRC service. Each line of the file is
-composed by pairs of key and value separated by semicolon, and refers to a
-single credential. The key and value should be separated by ``=``, that is
-**an equal sign preceded and followed by one white space at least**.
-
-Example of cloud provider with OIDC-based authentication:
-
-.. code-block:: console
-
-   $ cat /tmp/auth_INFN-CATANIA-STACK.dat
-   id = PROVIDER_ID; type = OpenStack; host = KEYSTONE_ENDPOINT; username = egi.eu; tenant = openid; domain = DOMAIN_NAME; auth_version = 3.x_oidc_access_token; password = OIDC_ACCESS_TOKEN
-
 Templates
 ^^^^^^^^^
 
@@ -116,7 +128,7 @@ This section contains the templates used to configure the cluster.
 
 ``ec3/templates/cluster_configure.radl``
 
-.. code-block::
+.. code-block:: console
 
    configure front (
    @begin
@@ -214,9 +226,9 @@ This section contains the templates used to configure the cluster.
    @end
    )
 
-``ubuntu-1604-occi-INFN-CATANIA-STACK.radl``:
+``ubuntu-1604-occi-INFN-CATANIA-STACK.radl``
 
-.. code-block::
+.. code-block:: console
 
    description ubuntu-1604-occi-INFN-CATANIA-STACK (
        kind = 'images' and
@@ -247,7 +259,7 @@ This section contains the templates used to configure the cluster.
 
 ``configure_nfs.radl``
 
-.. code-block::
+.. code-block:: console
 
    # http://www.server-world.info/en/note?os=CentOS_6&p=nfs&f=1
    # http://www.server-world.info/en/note?os=CentOS_7&p=nfs
@@ -296,16 +308,16 @@ This section contains the templates used to configure the cluster.
      template = 'openports'
    )
 
-Access the cluster
-------------------
+Access the EC3 cluster
+----------------------
 
 To access the cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh unicam_cluster
+   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh cluster
 
-   Warning: Permanently added '212.189.145.140' (ECDSA) to the list of known hosts.
+   Warning: Permanently added '212.189.145.XXX' (ECDSA) to the list of known hosts.
    Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-164-generic x86_64)
     * Documentation:  https://help.ubuntu.com/
    Last login: Tue Feb 19 13:04:45 2019 from servproject.i3m.upv.es
@@ -382,7 +394,7 @@ To destroy the running cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy unicam_cluster
+   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy cluster
    WARNING: you are going to delete the infrastructure (including frontend and nodes).
    Continue [y/N]? y
    Success deleting the cluster!
