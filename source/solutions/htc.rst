@@ -13,7 +13,7 @@ used instead of installing the CLI. You can download it with
 
 .. code-block:: console
 
-   docker pull grycap/ec3
+   ]$ sudo docker pull grycap/ec3
 
 That will allow you to exploit all the potential of EC3 from your computer.
 
@@ -24,7 +24,7 @@ To list the available templates, use the command:
 
 .. code-block:: console
 
-   docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 templates
+   ]$ sudo docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 templates
 
    name                    kind                                         summary
    ---------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ To list the available running clusters, use the command:
 
 .. code-block:: console
 
-   docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 list
+   ]$ sudo docker run -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 list
 
        name        state           IP           nodes
    -------------------------------------------------------
@@ -73,9 +73,9 @@ Example of cloud provider with OIDC-based authentication:
    id = PROVIDER_ID; type = OpenStack; host = KEYSTONE_ENDPOINT; username = egi.eu; tenant = openid; domain = DOMAIN_NAME; auth_version = 3.x_oidc_access_token; password = OIDC_ACCESS_TOKEN
    
    Where:
-   * `id` is the id of the cloud provider
-   * `host` is the public IP address of the cloud provider Keystone service 
-   * `domain` is the project tenant in the cloud provider
+   * `id` is the id of the cloud provider (e.g.: in2p3ostegi)
+   * `host` is the public IP address of the cloud provider Keystone service (e.g.: https://sbgcloud.in2p3.fr:5000/v3)
+   * `domain` is the project tenant in the cloud provider (e.g.: EGI_access)
    * `password` is the access token
 
 Get an access token
@@ -90,7 +90,7 @@ To launch a cluster, you can use the recipes that you have locally by mounting
 the folder as a volume, or create your dedicated ones. Also, it is
 recommendable to maintain the data of active clusters locally, by mounting a
 volume. In the next example, we are going to deploy a new Torque/Maui cluster
-on one cloud provider of the EGI Federation (INFN-CATANIA-STACK).
+on one cloud provider of the EGI Federation.
 
 The cluster will be configured with the following templates:
 
@@ -98,7 +98,7 @@ The cluster will be configured with the following templates:
 
    #torque (default template),
    #configure_nfs (patched template),
-   #ubuntu-1604-occi-INFN-CATANIA-STACK (user's template),
+   #centos7-OIDC-IN2P3-IRES_Torque (user's template),
    #cluster_configure (user's template)
 
 User’s templates are stored in ``$HOME/ec3/templates``
@@ -108,7 +108,7 @@ User’s templates are stored in ``$HOME/ec3/templates``
    docker run -v /home/centos/:/tmp/ \
               -v /home/centos/ec3/templates:/root/.ec3/templates \
               -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 launch cluster \
-              torque ubuntu-1604-occi-INFN-CATANIA-STACK cluster_configure refreshtoken configure_nfs \
+              torque centos7-OIDC-IN2P3-IRES_Torque cluster_configure refreshtoken configure_nfs \
               -a /tmp/auth.dat
 
    Creating infrastructure
@@ -156,6 +156,20 @@ This section contains the templates used to configure the cluster.
           - vim
          become: yes
          when: ansible_os_family == "Debian"
+       - name: Install missing dependences in RedHat distribution
+         yum: pkg={{ item }} state=present
+         with_items:
+          - "@Development Tools"
+          - csh
+          - tcsh
+          - tcl-devel
+          - openmpi
+          - openmpi-devel
+          - gcc-c++.x86_64
+          - mlocate
+          - vim
+         become: yes
+         when: ansible_os_family == "RedHat"
        - name: SSH without password
          include_role:
            name: grycap.ssh
@@ -164,17 +178,7 @@ This section contains the templates used to configure the cluster.
            ssh_user: "{{ user.name }}"
          loop: '{{ USERS }}'
          loop_control:
-           loop_var: user
-       - name: Updating the /etc/hosts.allow file
-         lineinfile:
-           path: /etc/hosts.allow
-           line: 'sshd: XXX.XXX.XXX.*'
-         become: yes
-       - name: Updating the /etc/hosts.deny file
-         lineinfile:
-           path: /etc/hosts.deny
-           line: 'ALL: ALL'
-         become: yes
+           loop_var: user     
    @end
    )
    configure wn (
@@ -203,6 +207,20 @@ This section contains the templates used to configure the cluster.
           - vim
          become: yes
          when: ansible_os_family == "Debian"
+       - name: Install missing dependences in RedHat distribution
+         yum: pkg={{ item }} state=present
+         with_items:
+          - "@Development Tools"
+          - csh
+          - tcsh
+          - tcl-devel
+          - openmpi
+          - openmpi-devel
+          - gcc-c++.x86_64
+          - mlocate
+          - vim
+         become: yes
+         when: ansible_os_family == "RedHat"         
        - name: SSH without password
          include_role:
            name: grycap.ssh
@@ -212,38 +230,30 @@ This section contains the templates used to configure the cluster.
          loop: '{{ USERS }}'
          loop_control:
            loop_var: user
-
-       - name: Updating the /etc/hosts.allow file
-         lineinfile:
-           path: /etc/hosts.allow
-           line: 'sshd: XXX.XXX.XXX.*'
-         become: yes
-       - name: Updating the /etc/hosts.deny file
-         lineinfile:
-           path: /etc/hosts.deny
-           line: 'ALL: ALL'
-         become: yes
    @end
    )
 
-``ubuntu-1604-occi-INFN-CATANIA-STACK.radl``
+``centos7-OIDC-IN2P3-IRES_Torque.radl``
 
 .. code-block:: console
 
    description ubuntu-1604-occi-INFN-CATANIA-STACK (
        kind = 'images' and
-       short = 'Ubuntu 16.04' and
-       content = 'FEDCLOUD Image for EGI Ubuntu 16.04 LTS [Ubuntu/16.04/VirtualBox]'
+       short = 'CentOS7' and
+       content = 'FEDCLOUD Image for CentOS7'
+   )
+   network public (
+       provider_id = 'ext-net' and
+       outports contains '22/tcp' and
    )
    system front (
        cpu.arch = 'x86_64' and
-       cpu.count >= 4 and
-       memory.size >= 8196 and
-       instance_type = 'http://schemas.openstack.org/template/resource#35aa7c8d-15a9-4832-ad34-02f2e78bdeb4' and
+       cpu.count >= 2 and
+       memory.size >= 4096m and
        disk.0.os.name = 'linux' and
-       # EGI_Training tenant
-       disk.0.image.url = 'http://stack-server.ct.infn.it:8787/occi1.1/024a1b38-1b60-4df9-861a-9ec79bed1e41' and
-       disk.0.os.credentials.username = 'ubuntu'
+       # vo.access.egi.eu tenant
+       disk.0.image.url = 'ost://sbgcloud.in2p3.fr/20de522d-1242-4211-be13-bcef51058a5e' and
+       disk.0.os.credentials.username = 'centos'
    )
    system wn (
        cpu.arch = 'x86_64' and
@@ -252,9 +262,9 @@ This section contains the templates used to configure the cluster.
        ec3_max_instances = 10 and # maximum number of working nodes in the cluster
        instance_type = 'http://schemas.openstack.org/template/resource#98f6ac88-e773-48b8-85bf-86415b421996' and
        disk.0.os.name = 'linux' and
-       # EGI_Training tenant
-       disk.0.image.url = 'http://stack-server.ct.infn.it:8787/occi1.1/024a1b38-1b60-4df9-861a-9ec79bed1e41' and
-       disk.0.os.credentials.username = 'ubuntu'
+       # vo.access.egi.eu tenant
+       disk.0.image.url = 'ost://sbgcloud.in2p3.fr/20de522d-1242-4211-be13-bcef51058a5e' and
+       disk.0.os.credentials.username = 'centos'
    )
 
 ``configure_nfs.radl``
@@ -315,12 +325,10 @@ To access the cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh cluster
+   ]$ sudo docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 ssh cluster
 
-   Warning: Permanently added '212.189.145.XXX' (ECDSA) to the list of known hosts.
-   Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-164-generic x86_64)
-    * Documentation:  https://help.ubuntu.com/
-   Last login: Tue Feb 19 13:04:45 2019 from servproject.i3m.upv.es
+   Warning: Permanently added '134.158.151.205' (ECDSA) to the list of known hosts.
+   Last login: Tue Jul 21 14:47:29 2020 from torito.i3m.upv.es
 
 Configuration of the cluster
 ----------------------------
@@ -330,7 +338,7 @@ Enable Password-based authentication
 
 Change settings in ``/etc/ssh/sshd_config``
 
-.. code-block::
+.. code-block:: console
 
    # Change to no to disable tunnelled clear text passwords
    PasswordAuthentication yes
@@ -339,14 +347,14 @@ and restart the ssh daemon:
 
 .. code-block:: console
 
-   sudo service ssh restart
+   sudo service sshd restart
 
 Configure the number of processors of the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
-   $ cat /var/spool/torque/server_priv/nodes
+   ]$ cat /var/spool/torque/server_priv/nodes
    wn1 np=XX
    wn2 np=XX
    [...]
@@ -355,7 +363,7 @@ To obtain the number of CPU/cores (np) in Linux, use the command:
 
 .. code-block:: console
 
-   $ lscpu | grep -i CPU
+   ]$ lscpu | grep -i CPU
    CPU op-mode(s):         32-bit, 64-bit
    CPU(s):                 16
    On-line CPU(s) list:    0-15
@@ -372,7 +380,7 @@ Create a simple test script:
 
 .. code-block:: console
 
-   $ cat test.sh
+   ]$ cat test.sh
    #!/bin/bash
    #PBS -N job
    #PBS -q batch
@@ -385,7 +393,7 @@ Submit to the batch queue:
 
 .. code-block:: console
 
-   $ qsub -l nodes=2 test.sh
+   ]$ qsub -l nodes=2 test.sh
 
 Destroy the cluster
 -------------------
@@ -394,7 +402,7 @@ To destroy the running cluster, use the command:
 
 .. code-block:: console
 
-   docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy cluster
+   ]$ sudo docker run -ti -v /var/.ec3/clusters:/root/.ec3/clusters grycap/ec3 destroy cluster
    WARNING: you are going to delete the infrastructure (including frontend and nodes).
    Continue [y/N]? y
    Success deleting the cluster!
