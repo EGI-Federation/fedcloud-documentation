@@ -328,38 +328,40 @@ This section contains the templates used to configure the cluster.
 
 .. code-block:: console
 
-description refreshtoken (
-    kind = 'component' and
-    short = 'Tool to refresh LToS access token.' and
-    content = 'Tool to refresh LToS access token.'
-)
+   description refreshtoken (
+       kind = 'component' and
+       short = 'Tool to refresh LToS access token.' and
+       content = 'Tool to refresh LToS access token.'
+   )
 
-configure front (
-@begin
-  - vars:
-      CLIENT_ID: ef4d5286-0db3-4c06-87ff-6a27ec97cb85
-      CLIENT_SECRET: O-UODpEZZiceW3X47Kx_RDYnd5KJwrm-UzHJK_4Z5tfyKF5RbtbluJcnzeGzPz8xmlfbCWEjKjDj_aBT3HlhlA
-      REFRESH_TOKEN_FILE:
-        ec3_file: refresh_token.py
+   configure front (
+   @begin
+     - vars:
+         CLIENT_ID: ef4d5286-0db3-4c06-87ff-6a27ec97cb85
+         CLIENT_SECRET: O-UODpEZZiceW3X47Kx_RDYnd5KJwrm-UzHJK_4Z5tfyKF5RbtbluJcnzeGzPz8xmlfbCWEjKjDj_aBT3HlhlA
+         REFRESH_TOKEN_FILE:
+           ec3_file: refresh_token.py
+       tasks:
+       - name: Create dir /usr/local/ec3/
+         file: path=/usr/local/ec3/ state=directory
 
-    tasks:
-    - name: Create dir /usr/local/ec3/
-      file: path=/usr/local/ec3/ state=directory
+       - copy:
+         dest: /usr/local/ec3/refresh_token.py
+         content: "{{REFRESH_TOKEN_FILE}}"
+         mode: 0700
 
-    - copy:
-        dest: /usr/local/ec3/refresh_token.py
-        content: "{{REFRESH_TOKEN_FILE}}"
-        mode: 0700
-
-    - cron:
-        name: "refresh token"
-        minute: "*/5"
-        job: "[ -f /usr/local/ec3/auth.dat ] && /usr/local/ec3/refresh_token.py {{ CLIENT_ID }} {{ CLIENT_SECRET }}"
-        user: root
-        cron_file: refresh_token
-        state: present
-@end
-)
+       - cron:
+         name: "refresh token"
+         minute: "*/5"
+         job: "[ -f /usr/local/ec3/auth.dat ] && /usr/local/ec3/refresh_token.py {{ CLIENT_ID }} {{ CLIENT_SECRET }}"
+         user: root
+         cron_file: refresh_token
+         state: present
+   @end
+   )
+   
+      
+The ``renew_proxy.py`` is available here: <https://github.com/EGI-Foundation/ec3-haddock-cluster/blob/master/ec3/templates/renew_proxy.py>`_.
 
 
 Access the EC3 cluster
