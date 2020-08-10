@@ -330,7 +330,7 @@ defining v0.2 of the format is shown below:
 | IPVersion                 | ``byte``         | No   | 4 or 6                          |                                       |
 +---------------------------+------------------+------+---------------------------------+---------------------------------------+
 | IPCount                   | ``int(11)``      | No   | The number of IP addresses of   |                                       |
-|                           |                  |      | IPType this user currently      |                                       |
+|                           |                  |      | IPVersion this user currently   |                                       |
 |                           |                  |      | assigned to them                |                                       |
 +---------------------------+------------------+------+---------------------------------+---------------------------------------+
 
