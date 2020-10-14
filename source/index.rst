@@ -2,7 +2,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. NOTE:: This documentation is obslote, please reach `<https://docs.egi.eu/users/cloud-compute/>`_.
+.. NOTE:: This documentation is obsolete, please reach `<https://docs.egi.eu/users/cloud-compute/>`_.
 
 EGI Federated Cloud
 ===================
