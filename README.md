@@ -1,3 +1,5 @@
+> This documentation is *obsolete* and was replaced by https://docs.egi.eu/users/cloud-compute.
+
 # EGI Federated Cloud (FedCloud) Documentation
 
 [![Documentation Status](https://readthedocs.org/projects/egi-federated-cloud/badge/?version=latest)](http://egi-federated-cloud.readthedocs.io/en/latest/?badge=latest)
